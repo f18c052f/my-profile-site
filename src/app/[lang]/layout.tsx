@@ -1,6 +1,7 @@
 import { dir } from 'i18next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { LanguageProvider } from '@/app/i18n/client';
 import Header from './components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,8 +16,12 @@ export default function RootLayout({
   return (
     <html lang={lang} dir={dir(lang)}>
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
+        <main>
+          <LanguageProvider initialLanguage={lang}>
+            <Header />
+            {children}
+          </LanguageProvider>
+        </main>
       </body>
     </html>
   );
