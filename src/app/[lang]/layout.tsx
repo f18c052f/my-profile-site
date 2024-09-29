@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/app/i18n/client';
 import Header from './components/Header';
-import styles from '@/assets/css/Header.module.css';
+import { ThemeProvider } from './components/provider/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +15,14 @@ export default function RootLayout({
   params: { lang: string };
 }>) {
   return (
-    <html lang={lang} dir={dir(lang)}>
+    <html lang={lang} dir={dir(lang)} suppressHydrationWarning>
       <body className={`${inter.className}`}>
         <main>
           <LanguageProvider initialLanguage={lang}>
-            <Header />
-            {children}
+            <ThemeProvider>
+              <Header />
+              {children}
+            </ThemeProvider>
           </LanguageProvider>
         </main>
       </body>

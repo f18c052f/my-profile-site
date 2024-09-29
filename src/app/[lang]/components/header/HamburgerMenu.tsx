@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -7,10 +7,27 @@ import hamburgerImage from '@assets/images/header/hamburger-menu-svgrepo-com.svg
 
 const HamburgerMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLUListElement>(null); // メニューの参照
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+
+  // メニュー外をクリックしたらメニューを閉じる
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false); // メニュー外クリックでメニューを閉じる
+      }
+    };
+
+    // グローバルクリックイベントの監視
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav>
@@ -24,6 +41,7 @@ const HamburgerMenu = () => {
 
       {/* Framer Motionでアニメーションを追加 */}
       <motion.ul
+        ref={menuRef} // メニューを参照
         initial={{ height: 0, opacity: 0 }} // 初期状態（非表示）
         animate={{
           height: isMenuOpen ? 'auto' : 0,
