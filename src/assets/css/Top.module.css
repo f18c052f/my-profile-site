@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1); /* bg-opacity-10 */
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  backdrop-filter: blur(10px);
+  text-shadow: 0 0 20px black;
+}
+
+.icon {
+  border-radius: 50%;
+  width: 128px;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600; /* font-semibold */
+}
+
+.githubIcon {
+  margin-top: 16px;
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
