@@ -2,8 +2,8 @@ import { dir } from 'i18next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/app/i18n/client';
-import Header from './components/Header';
-import { ThemeProvider } from './components/provider/ThemeProvider';
+import { ThemeProvider } from './context/ThemeProvider';
+import { HamburgerMenu } from './components/HamburgerMenu/HamburgerMenu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,11 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={lang} dir={dir(lang)} suppressHydrationWarning>
-      <body className={`${inter.className}`}>
+      <body>
         <main>
           <LanguageProvider initialLanguage={lang}>
             <ThemeProvider>
-              <Header />
+              <HamburgerMenu />
               {children}
             </ThemeProvider>
           </LanguageProvider>
