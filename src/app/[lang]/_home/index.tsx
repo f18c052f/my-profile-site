@@ -3,6 +3,7 @@
 import React from 'react';
 import { useLanguage, useTranslation } from '@/app/i18n/client';
 import Top from './Top';
+import MotionProfile from './MotionProfile';
 
 export default function HomeComponent() {
   const { language } = useLanguage();
@@ -10,48 +11,8 @@ export default function HomeComponent() {
 
   return (
     <>
-      <Top />
+      <MotionProfile />
       <p>CC: {t('app_name')}</p>
-      <div>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-        <p>hogehogeだよ！</p>
-      </div>
     </>
   );
 }
