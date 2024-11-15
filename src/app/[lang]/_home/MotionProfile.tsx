@@ -44,7 +44,7 @@ const MotionProfile: React.FC = () => {
     '',
     'ABOUT ME',
     'EXPERIENCE',
-    'CERTIFICATIONs',
+    'CERTIFICATIONS',
     'SKILLS',
     'HOBBIES',
   ];

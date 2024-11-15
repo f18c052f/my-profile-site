@@ -1,37 +1,7 @@
-body {
-  --black: #000000;
-  --ash-black: #222;
-  --white: #fafafa;
-  --sky: #00ccff;
-  --green: #22dddd;
-  --blue: #1300ff;
-  --dusk: #6600ff;
-  --purple: #9900ff;
-  --pink: #ff0066;
-  --red: #fe0222;
-  --orange: #fd7702;
-  --yellow: #ffbb00;
-
-  --background: var(--red);
-  --accent: var(--white);
-
-  margin: 0;
-  padding: 0;
-  background-color: var(--background);
-  color: var(--accent);
-}
-
-* {
-  font-family: sofia-pro, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-}
-
 h1,
 h2,
 h3 {
-  font-family: sofia-pro, sans-serif;
+  font-family: 'Shippori Mincho', serif;
   font-weight: 600;
   font-style: normal;
 }
@@ -63,7 +33,7 @@ footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px;
+  padding: 25px;
   background-image: radial-gradient(
     rgba(0, 0, 0, 0) 1px,
     var(--background) 1px
@@ -84,21 +54,17 @@ footer::before {
   left: 0;
   right: 0;
   height: 1px;
-  background: var(--accent);
+  background: #00a2a8;
   opacity: 0.2;
-}
-
-footer svg {
-  margin-right: 20px;
 }
 
 footer a {
   text-decoration: none;
-  color: var(--accent);
+  color: #00a2a8;
 }
 
 code {
-  font-family: input-mono, monospace;
+  font-family: 'Shippori Mincho', serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -106,16 +72,16 @@ code {
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
-  background: var(--background);
+  background: #defaf5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: #00a2a8;
   -webkit-border-radius: 1ex;
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--background);
+  background: #00a2a8;
 }
 
 html {
@@ -134,7 +100,7 @@ h1 {
 h2 {
   margin: 0;
   color: var(--black);
-  left: calc(50% + 130px);
+  top: 80px;
   font-size: 56px;
   font-weight: 700;
   letter-spacing: -3px;
@@ -153,11 +119,10 @@ section {
 }
 
 section > div {
-  width: 100vw;
-  height: 90vh;
+  /* width: 100vw;
+  max-height: 90vh; */
   position: relative;
   margin-bottom: 10vh;
-  background: var(--white);
   overflow: hidden;
 }
 
@@ -176,6 +141,6 @@ section > div {
   left: 0;
   right: 0;
   height: 5px;
-  background: var(--accent);
-  bottom: 100px;
+  background: #00a2a8;
+  bottom: 58px;
 }

@@ -8,6 +8,20 @@
 .backgroundImage {
   object-fit: cover;
   z-index: -1;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
 .content {
@@ -40,7 +54,9 @@
 
 .title {
   font-size: 32px;
-  font-weight: 600; /* font-semibold */
+  font-weight: 450; /* font-semibold */
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .githubIcon {
