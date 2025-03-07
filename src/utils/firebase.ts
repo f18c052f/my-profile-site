@@ -1,8 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, connectAuthEmulator } from 'firebase/auth';
+import { getAnalytics, setAnalyticsCollectionEnabled } from 'firebase/analytics';
 
-// Firebaseの設定
-// 注: 実際の値は.envファイルで管理します
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -12,6 +11,12 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Firebaseの初期化
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+// 開発環境では認証エミュレーターを使用し、アナリティクスを無効化
+if (import.meta.env.DEV) {
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099');
+  const analytics = getAnalytics(app);
+  setAnalyticsCollectionEnabled(analytics, false);
+}

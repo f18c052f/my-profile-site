@@ -29,7 +29,8 @@ export const ja = {
         placeholder: 'パスワードを入力',
         button: '表示',
         error: 'パスワードが正しくありません。もう一度お試しください。',
-        systemError: 'エラーが発生しました。後でもう一度お試しください。'
+        systemError: 'エラーが発生しました。後でもう一度お試しください。',
+        blocked: '試行回数が多すぎます。{{seconds}}秒後に再度お試しください。'
       },
       items: [
         {
@@ -77,26 +78,31 @@ export const ja = {
         {
           emoji: '📚',
           title: '読書',
-          description: '技術書とSF小説',
-          link: 'https://www.goodreads.com/user/show/YOUR_ID'
+          description: ['技術書', 'SF小説'],
+          apps: []
         },
         {
           emoji: '🎸',
           title: 'ギター',
-          description: 'アコースティックとエレキギター',
-          link: 'https://soundcloud.com/YOUR_ID'
+          description: ['アコースティックギター', 'エレキギター'],
+          apps: []
         },
         {
           emoji: '🏃',
           title: 'ランニング',
-          description: 'マラソン練習とトレイルランニング',
-          link: 'https://www.strava.com/athletes/YOUR_ID'
+          description: ['マラソン練習', 'トレイルランニング'],
+          apps: []
         },
         {
           emoji: '📷',
           title: '写真撮影',
-          description: 'ストリートと風景写真',
-          link: 'https://www.instagram.com/YOUR_ID'
+          description: ['ストリート写真', '風景写真'],
+          apps: [
+            {
+              name: 'フォトギャラリーアプリ',
+              url: 'https://example.com/photo-gallery'
+            }
+          ]
         }
       ]
     },
@@ -105,15 +111,31 @@ export const ja = {
       patents: {
         title: '特許',
         items: [
-          '画像処理に関する特許（特許第1234567号）',
-          'データ分析手法に関する特許（特許第7654321号）'
+          {
+            title: '画像処理に関する特許',
+            number: '特許第1234567号',
+            url: 'https://patents.google.com/patent/JP1234567'
+          },
+          {
+            title: 'データ分析手法に関する特許',
+            number: '特許第7654321号',
+            url: 'https://patents.google.com/patent/JP7654321'
+          }
         ]
       },
       publications: {
         title: '論文',
         items: [
-          '機械学習を用いた画像認識の研究（情報処理学会論文誌, 2022年）',
-          'クラウドシステムの可用性に関する研究（○○学会誌, 2021年）'
+          {
+            title: '機械学習を用いた画像認識の研究',
+            journal: '情報処理学会論文誌, 2022年',
+            url: 'https://doi.org/10.1234/journal.2022'
+          },
+          {
+            title: 'クラウドシステムの可用性に関する研究',
+            journal: '○○学会誌, 2021年',
+            url: 'https://doi.org/10.5678/journal.2021'
+          }
         ]
       },
       awards: {

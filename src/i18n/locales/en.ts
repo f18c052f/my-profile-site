@@ -29,7 +29,8 @@ export const en = {
         placeholder: 'Enter password',
         button: 'Show',
         error: 'Invalid password. Please try again.',
-        systemError: 'An error occurred. Please try again later.'
+        systemError: 'An error occurred. Please try again later.',
+        blocked: 'Too many attempts. Please wait {{seconds}} seconds before trying again.'
       },
       items: [
         {
@@ -77,26 +78,31 @@ export const en = {
         {
           emoji: '📚',
           title: 'Reading',
-          description: 'Technical books and science fiction',
-          link: 'https://www.goodreads.com/user/show/YOUR_ID'
+          description: ['Technical books', 'Science fiction'],
+          apps: []
         },
         {
           emoji: '🎸',
           title: 'Playing Guitar',
-          description: 'Acoustic and electric guitar',
-          link: 'https://soundcloud.com/YOUR_ID'
+          description: ['Acoustic guitar', 'Electric guitar'],
+          apps: []
         },
         {
           emoji: '🏃',
           title: 'Running',
-          description: 'Marathon training and trail running',
-          link: 'https://www.strava.com/athletes/YOUR_ID'
+          description: ['Marathon training', 'Trail running'],
+          apps: []
         },
         {
           emoji: '📷',
           title: 'Photography',
-          description: 'Street and landscape photography',
-          link: 'https://www.instagram.com/YOUR_ID'
+          description: ['Street photography', 'Landscape photography'],
+          apps: [
+            {
+              name: 'Photo Gallery App',
+              url: 'https://example.com/photo-gallery'
+            }
+          ]
         }
       ]
     },
@@ -105,15 +111,31 @@ export const en = {
       patents: {
         title: 'Patents',
         items: [
-          'Patent for image processing technology (Patent No. 1234567)',
-          'Patent for data analysis method (Patent No. 7654321)'
+          {
+            title: 'Image processing technology',
+            number: 'Patent No. 1234567',
+            url: 'https://patents.google.com/patent/US1234567'
+          },
+          {
+            title: 'Data analysis method',
+            number: 'Patent No. 7654321',
+            url: 'https://patents.google.com/patent/US7654321'
+          }
         ]
       },
       publications: {
         title: 'Publications',
         items: [
-          'Research on image recognition using machine learning (Information Processing Society Journal, 2022)',
-          'Research on cloud system availability (XX Journal, 2021)'
+          {
+            title: 'Research on image recognition using machine learning',
+            journal: 'Information Processing Society Journal, 2022',
+            url: 'https://doi.org/10.1234/journal.2022'
+          },
+          {
+            title: 'Research on cloud system availability',
+            journal: 'XX Journal, 2021',
+            url: 'https://doi.org/10.5678/journal.2021'
+          }
         ]
       },
       awards: {

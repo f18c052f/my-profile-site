@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Lock, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -12,14 +12,58 @@ interface AuthFormProps {
 const AuthForm: React.FC<AuthFormProps> = ({ onAuth, error, isLoading }) => {
   const { t } = useTranslation();
   const [password, setPassword] = useState('');
+  const [attempts, setAttempts] = useState(0);
+  const [isBlocked, setIsBlocked] = useState(false);
+  const [blockTimer, setBlockTimer] = useState(0);
+
+  useEffect(() => {
+    let timer: number;
+    if (isBlocked && blockTimer > 0) {
+      timer = window.setInterval(() => {
+        setBlockTimer((prev) => prev - 1);
+      }, 1000);
+    } else if (blockTimer === 0) {
+      setIsBlocked(false);
+    }
+    return () => clearInterval(timer);
+  }, [isBlocked, blockTimer]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (isBlocked) return;
+
     if (password.trim()) {
-      await onAuth(password);
-      setPassword('');
+      try {
+        await onAuth(password);
+        setPassword('');
+        setAttempts(0);
+      } catch {
+        const newAttempts = attempts + 1;
+        setAttempts(newAttempts);
+        
+        if (newAttempts >= 3) {
+          setIsBlocked(true);
+          setBlockTimer(30);
+          setAttempts(0);
+        }
+      }
     }
   };
+
+  if (isBlocked) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm"
+      >
+        <p className="text-red-500 text-sm text-center">
+          {t('profile.career.auth.blocked', { seconds: blockTimer })}
+        </p>
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div
@@ -54,6 +98,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onAuth, error, isLoading }) => {
                      disabled:opacity-50 disabled:cursor-not-allowed"
             placeholder={t('profile.career.auth.placeholder')}
             disabled={isLoading}
+            autoComplete="current-password"
           />
           <button
             type="submit"
