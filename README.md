@@ -3,6 +3,7 @@
 ## Environment Setup
 
 1. Copy `.env.example` to `.env`:
+
 ```bash
 cp .env.example .env
 ```
@@ -17,7 +18,13 @@ VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 VITE_AUTH_EMAIL=your_auth_email
+VITE_USE_EMULATOR=true
 ```
+
+## Environment Switching
+
+- `VITE_USE_EMULATOR=true`: エミュレータ環境を使用（デフォルト）
+- `VITE_USE_EMULATOR=false`: 本番環境を使用
 
 ## Security Notes
 

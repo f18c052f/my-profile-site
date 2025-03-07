@@ -1,33 +1,40 @@
-import { 
+import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
   type User,
   setPersistence,
   browserSessionPersistence,
-  inMemoryPersistence
-} from 'firebase/auth';
-import { auth } from './firebase';
+  inMemoryPersistence,
+} from "firebase/auth";
+import { auth } from "./firebase";
+import { environmentManager } from "./environment";
 
 export const authenticate = async (password: string): Promise<boolean> => {
   try {
-    const email = import.meta.env.VITE_AUTH_EMAIL;
-    if (!email) {
-      console.log('Authentication email not configured');
-      return false;
-    }
+    const email = import.meta.env.VITE_AUTH_EMAIL || "test@example.com";
+
     if (!password) {
-      console.log('Password is required');
+      console.log("Password is required");
       return false;
     }
 
-    // Use session persistence for better security
-    await setPersistence(auth, import.meta.env.PROD ? browserSessionPersistence : inMemoryPersistence);
-    
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    // セッション永続性の設定
+    await setPersistence(
+      auth,
+      environmentManager.isProduction()
+        ? browserSessionPersistence
+        : inMemoryPersistence
+    );
+
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
     return !!userCredential.user;
   } catch (error) {
-    console.log('Authentication failed:', error);
+    console.log("Authentication failed:", error);
     return false;
   }
 };
@@ -45,6 +52,6 @@ export const clearAuth = async (): Promise<void> => {
   try {
     await signOut(auth);
   } catch (error) {
-    console.log('Sign out failed:', error);
+    console.log("Sign out failed:", error);
   }
 };
