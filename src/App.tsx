@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Profile from './components/Profile';
-import Gallery from './components/Gallery';
-import { logPageView } from './utils/analytics';
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Profile from "./components/Profile";
+import Gallery from "./components/Gallery";
+import { logPageView } from "./utils/analytics";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -22,10 +22,10 @@ function App() {
     };
 
     handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
@@ -41,7 +41,7 @@ function App() {
       <Gallery />
       <footer className="py-6 px-4 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Y.Ohara . All rights reserved.
         </div>
       </footer>
     </div>
