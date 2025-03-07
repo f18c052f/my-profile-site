@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       <div 
@@ -18,7 +21,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 text-center text-white px-4"
+        className="relative z-10 text-center text-white px-4 max-w-3xl"
       >
         <div className="mb-8">
           <img
@@ -28,8 +31,10 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Name</h1>
-        <p className="text-xl md:text-2xl mb-8 text-gray-200">Software Engineer & Creative Developer</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('hero.title')}</h1>
+        <p className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed">
+          {t('hero.introduction')}
+        </p>
 
         <div className="flex justify-center space-x-6">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">

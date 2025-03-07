@@ -1,69 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Code, Award, Briefcase, Lock } from 'lucide-react';
+import { BookOpen, Code, Award, Briefcase, Lock, Heart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import AuthForm from './AuthForm';
+import { authenticate, checkAuthStatus, clearAuth } from '../utils/auth';
 
 const Profile: React.FC = () => {
+  const { t } = useTranslation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string>();
 
-  const handleAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password === 'demo') {
-      setIsAuthenticated(true);
+  useEffect(() => {
+    const authStatus = checkAuthStatus();
+    setIsAuthenticated(authStatus);
+  }, []);
+
+  const handleAuth = async (password: string) => {
+    setIsLoading(true);
+    setError(undefined);
+    try {
+      const success = await authenticate(password);
+      if (success) {
+        setIsAuthenticated(true);
+      } else {
+        setError(t('profile.career.auth.error'));
+      }
+    } catch (err) {
+      setError(t('profile.career.auth.systemError'));
+    } finally {
+      setIsLoading(false);
     }
   };
-
-  const education = [
-    { year: '2020', description: '○○大学大学院 修士課程修了' },
-    { year: '2018', description: '○○大学 工学部 卒業' },
-  ];
-
-  const career = [
-    {
-      year: '2020 - 現在',
-      company: '株式会社ABC',
-      position: 'シニアエンジニア',
-      summary: 'Web アプリケーション開発',
-      details: [
-        'マイクロサービスアーキテクチャの設計と実装',
-        'チームリーダーとして10名のエンジニアをマネジメント',
-        'AWS を活用したクラウドインフラの構築と運用',
-        'CI/CD パイプラインの整備とデプロイ自動化の実現'
-      ]
-    },
-    {
-      year: '2018 - 2020',
-      company: '株式会社XYZ',
-      position: 'ソフトウェアエンジニア',
-      summary: 'モバイルアプリケーション開発',
-      details: [
-        'React Native を使用したクロスプラットフォームアプリの開発',
-        'バックエンド API の設計と実装',
-        'ユーザー認証システムの構築',
-        'パフォーマンス最適化によるアプリの応答速度を50%改善'
-      ]
-    }
-  ];
 
   const skills = {
-    'Programming Languages': ['TypeScript', 'Python', 'Java'],
-    'Frameworks/Libraries': ['React', 'Next.js', 'Django'],
-    'Tools': ['Git', 'Docker', 'AWS'],
-    'Qualifications': ['応用情報技術者', 'TOEIC 900点'],
-  };
-
-  const achievements = {
-    patents: [
-      '画像処理に関する特許（特許第1234567号）',
-      'データ分析手法に関する特許（特許第7654321号）'
+    'Programming Languages': [
+      { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
+      { name: 'Python', icon: 'devicon-python-plain colored' },
+      { name: 'Java', icon: 'devicon-java-plain colored' }
     ],
-    publications: [
-      '機械学習を用いた画像認識の研究（情報処理学会論文誌, 2022年）',
-      'クラウドシステムの可用性に関する研究（○○学会誌, 2021年）'
+    'Frameworks/Libraries': [
+      { name: 'React', icon: 'devicon-react-original colored' },
+      { name: 'Next.js', icon: 'devicon-nextjs-original' },
+      { name: 'Django', icon: 'devicon-django-plain colored' }
     ],
-    awards: [
-      '○○学会 優秀論文賞（2022年）',
-      '△△ハッカソン 優勝（2021年）'
+    'Tools': [
+      { name: 'Git', icon: 'devicon-git-plain colored' },
+      { name: 'Docker', icon: 'devicon-docker-plain colored' },
+      { name: 'AWS', icon: 'devicon-amazonwebservices-original colored' }
+    ],
+    'Qualifications': [
+      { name: t('profile.skills.qualifications.applied_info'), icon: 'devicon-javascript-plain' },
+      { name: t('profile.skills.qualifications.toeic'), icon: 'devicon-javascript-plain' }
     ]
   };
 
@@ -76,7 +64,7 @@ const Profile: React.FC = () => {
           viewport={{ once: true }}
           className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
         >
-          Profile
+          {t('profile.title')}
         </motion.h2>
 
         {/* Education Timeline */}
@@ -87,10 +75,10 @@ const Profile: React.FC = () => {
           className="mb-12"
         >
           <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
-            <BookOpen className="mr-2" /> 学歴
+            <BookOpen className="mr-2" /> {t('profile.education.title')}
           </h3>
           <div className="space-y-4">
-            {education.map((item, index) => (
+            {t('profile.education.items', { returnObjects: true }).map((item: any, index: number) => (
               <div key={index} className="flex">
                 <div className="w-24 flex-shrink-0 text-gray-600 dark:text-gray-400">
                   {item.year}
@@ -111,11 +99,11 @@ const Profile: React.FC = () => {
           className="mb-12"
         >
           <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
-            <Briefcase className="mr-2" /> 職務経歴
+            <Briefcase className="mr-2" /> {t('profile.career.title')}
           </h3>
           {!isAuthenticated ? (
             <div className="space-y-6">
-              {career.map((item, index) => (
+              {t('profile.career.items', { returnObjects: true }).map((item: any, index: number) => (
                 <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
                   <div className="flex flex-wrap justify-between items-start mb-2">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">{item.company}</h4>
@@ -125,37 +113,11 @@ const Profile: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-300">{item.summary}</p>
                 </div>
               ))}
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
-                <form onSubmit={handleAuth} className="max-w-md mx-auto">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <Lock className="text-gray-500 dark:text-gray-400" />
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      詳細を表示するにはパスワードを入力してください
-                    </p>
-                  </div>
-                  <div className="flex space-x-2">
-                    <input
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
-                               bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                      placeholder="パスワードを入力"
-                    />
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 
-                               transition-colors duration-200"
-                    >
-                      表示
-                    </button>
-                  </div>
-                </form>
-              </div>
+              <AuthForm onAuth={handleAuth} error={error} isLoading={isLoading} />
             </div>
           ) : (
             <div className="space-y-6">
-              {career.map((item, index) => (
+              {t('profile.career.items', { returnObjects: true }).map((item: any, index: number) => (
                 <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
                   <div className="flex flex-wrap justify-between items-start mb-2">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">{item.company}</h4>
@@ -164,7 +126,7 @@ const Profile: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-2">{item.position}</p>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">{item.summary}</p>
                   <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                    {item.details.map((detail, detailIndex) => (
+                    {item.details.map((detail: string, detailIndex: number) => (
                       <li key={detailIndex}>{detail}</li>
                     ))}
                   </ul>
@@ -182,18 +144,63 @@ const Profile: React.FC = () => {
           className="mb-12"
         >
           <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
-            <Code className="mr-2" /> スキル
+            <Code className="mr-2" /> {t('profile.skills.title')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
-                <h4 className="font-medium mb-3 text-gray-900 dark:text-white">{category}</h4>
-                <ul className="space-y-2">
+                <h4 className="font-medium mb-4 text-gray-900 dark:text-white">
+                  {t(`profile.skills.categories.${category}`)}
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {items.map((item, index) => (
-                    <li key={index} className="text-gray-600 dark:text-gray-300">{item}</li>
+                    <div key={index} className="flex items-center space-x-3">
+                      <i className={`${item.icon} text-2xl`}></i>
+                      <span className="text-gray-600 dark:text-gray-300 break-words">{item.name}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Hobbies */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+            <Heart className="mr-2" /> {t('profile.hobbies.title')}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {t('profile.hobbies.items', { returnObjects: true }).map((hobby: any, index: number) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm"
+              >
+                <a
+                  href={hobby.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:opacity-80 transition-opacity"
+                >
+                  <div className="flex items-start space-x-4">
+                    <span className="text-4xl">{hobby.emoji}</span>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                        {hobby.title}
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {hobby.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -206,29 +213,29 @@ const Profile: React.FC = () => {
           className="mb-12"
         >
           <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
-            <Award className="mr-2" /> 実績
+            <Award className="mr-2" /> {t('profile.achievements.title')}
           </h3>
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
-              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">特許</h4>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">{t('profile.achievements.patents.title')}</h4>
               <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                {achievements.patents.map((patent, index) => (
+                {t('profile.achievements.patents.items', { returnObjects: true }).map((patent: string, index: number) => (
                   <li key={index}>{patent}</li>
                 ))}
               </ul>
             </div>
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
-              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">論文</h4>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">{t('profile.achievements.publications.title')}</h4>
               <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                {achievements.publications.map((publication, index) => (
+                {t('profile.achievements.publications.items', { returnObjects: true }).map((publication: string, index: number) => (
                   <li key={index}>{publication}</li>
                 ))}
               </ul>
             </div>
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
-              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">受賞歴</h4>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">{t('profile.achievements.awards.title')}</h4>
               <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                {achievements.awards.map((award, index) => (
+                {t('profile.achievements.awards.items', { returnObjects: true }).map((award: string, index: number) => (
                   <li key={index}>{award}</li>
                 ))}
               </ul>

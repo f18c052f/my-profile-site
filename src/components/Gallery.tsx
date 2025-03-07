@@ -1,33 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Gallery: React.FC = () => {
-  const images = [
-    {
-      url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-      title: '山の風景',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470',
-      title: '海の夕暮れ',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad',
-      title: '都市の夜景',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
-      title: '森の小道',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e',
-      title: '緑の森',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8',
-      title: '夕暮れの空',
-    },
-  ];
+  const { t } = useTranslation();
+  const images = t('gallery.items', { returnObjects: true });
 
   return (
     <section id="gallery" className="min-h-screen pt-20 pb-16 px-4 bg-white dark:bg-gray-900">
@@ -38,11 +15,11 @@ const Gallery: React.FC = () => {
           viewport={{ once: true }}
           className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
         >
-          Gallery
+          {t('gallery.title')}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
+          {images.map((image: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -69,4 +46,4 @@ const Gallery: React.FC = () => {
   );
 };
 
-export default Gallery;
+export default Gallery

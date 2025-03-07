@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Languages, Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   toggleDarkMode: () => void;
@@ -7,8 +8,13 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
-  const [isJapanese, setIsJapanese] = useState(true);
+  const { t, i18n } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'ja' ? 'en' : 'ja';
+    i18n.changeLanguage(newLang);
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -21,14 +27,14 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
         className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
         onClick={() => setIsMobileMenuOpen(false)}
       >
-        {isJapanese ? 'プロフィール' : 'Profile'}
+        {t('header.profile')}
       </a>
       <a 
         href="#gallery" 
         className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
         onClick={() => setIsMobileMenuOpen(false)}
       >
-        {isJapanese ? 'ギャラリー' : 'Gallery'}
+        {t('header.gallery')}
       </a>
     </>
   );
@@ -38,17 +44,16 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">Your Name</h1>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white">{t('hero.title')}</h1>
           </div>
           
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <NavLinks />
           </nav>
 
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => setIsJapanese(!isJapanese)}
+              onClick={toggleLanguage}
               className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               <Languages className="h-5 w-5" />
@@ -65,7 +70,6 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
               )}
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
               className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -79,7 +83,6 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="md:hidden py-4 space-y-4 flex flex-col items-center border-t border-gray-200 dark:border-gray-700">
             <NavLinks />
@@ -90,4 +93,4 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
   );
 };
 
-export default Header;
+export default Header
