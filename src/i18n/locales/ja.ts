@@ -1,12 +1,22 @@
+import hikari from "../../assets/images/IMGP0803.jpeg";
+import sunset from "../../assets/images/IMGP3645_ret.jpg";
+import yurameki from "../../assets/images/IMGP5227_ret.jpg";
+import ajisai from "../../assets/images/IMGP9249.jpeg";
+import sakura from "../../assets/images/DSC02515.jpg";
+import amsterdam from "../../assets/images/amsterdam.jpg";
+import ramune from "../../assets/images/DSC00678.jpeg";
+import redsun from "../../assets/images/DSC00875_ex.jpeg";
+import kiritori from "../../assets/images/IMGP8660.jpeg";
+
 export const ja = {
   header: {
     profile: "プロフィール",
     gallery: "ギャラリー",
   },
   hero: {
-    title: "Y.Ohara",
+    title: "Y.Ohara's Profile",
     introduction:
-      "1995年生まれ、富山県出身、新潟県在住の一児の父です。学生時代は電子回路や光干渉計といったハードウェアを専門に学んでいましたが、縁あって現在はソフトウェアエンジニアとして働いています。",
+      "1995年生まれ、富山県出身、新潟県在住の一児の父です。学生時代は電子回路や光干渉計といったハードウェアをメインに学んでいましたが、気づけばソフトウェアエンジニアとして働いています。",
   },
   profile: {
     title: "プロフィール",
@@ -37,74 +47,74 @@ export const ja = {
         {
           year: "2023 - 現在",
           company: "SIer",
-          position: "DX / エンジニア",
-          summary: "Webアプリケーション開発",
-          details: [
-            "マイクロサービスアーキテクチャの設計と実装",
-            "チームリーダーとして10名のエンジニアをマネジメント",
-            "AWS を活用したクラウドインフラの構築と運用",
-            "CI/CD パイプラインの整備とデプロイ自動化の実現",
-          ],
+          position: "エンジニア",
+          summary: "新規事業創出部所属",
+          details:
+            "SIerに入社。\n\nWebアプリやスマホアプリを中心に、自社サービスの新規企画・研究開発・製造・保守運用、および受託での基本設計支援・製造など、幅広い案件に参画。\nスクラム開発、ウォーターフォール開発のいずれも経験。\n\n# 2023\n ・受託案件：スパコン環境での開発支援 (ドキュメント作成、バッチ・プログラム作成、テスト、各種調査) (Linux/Python)\n ・自社サービスベースの新規事業企画：アクセシビリティを考慮したスマホアプリのPoC作成 (ReactNative/TypeScript/Firebase/Looker)\n# 2024\n ・自社サービスベースの新規事業企画 (継続)：他企業との共創、エンドユーザーへのデモ・ヒアリング (フィリピンで英語プレゼン実施)\n ・自社サービスの保守運用：Google Play/Apple Storeの規約対応\n# 2025\n ・受託案件：基本設計支援 (業務フロー整理、モックによるデモ)\n ・社内小規模研究会：IoTアプリ構築（AWS IoT Core/Streamlit/ESP32）",
         },
         {
           year: "2020 - 2023",
           company: "車載機器メーカー",
-          position: "R&D / エンジニア",
-          summary: "次世代車載製品の要素技術開発",
-          details: [
-            "2020 - 2023：",
-            "  車載用ARシステム開発",
-            "  HMI感性評価・データ分析",
-            "  組み込みシステムの負荷評価",
-            "  特許出願",
-          ],
+          position: "エンジニア",
+          summary: "R&D事業部所属",
+          details:
+            "車載機器メーカーに入社。\n\n主に次世代車載製品の要素技術開発を担当し、PoC (概念実証) の開発、成果物を用いた感性評価、データ分析、特許出願等の業務に従事。\n\nソフトウェア領域においては、車両向けARシステムの構築、組込みシステムの負荷評価等を実施。",
         },
       ],
     },
     skills: {
       title: "スキル",
       categories: {
-        "Programming Languages": "プログラミング言語",
-        "Frameworks/Libraries": "フレームワーク/ライブラリ",
+        "Programming Languages": "プログラミング言語/フレームワーク/ライブラリ",
+        // "Frameworks/Libraries": "フレームワーク/ライブラリ",
         Tools: "ツール",
         Qualifications: "資格",
       },
-      qualifications: {
-        applied_info: "応用情報技術者",
-        toeic: "TOEIC 900点",
-      },
+      qualifications: [
+        "TOEIC 845点(2022)",
+        "Google Cloud Associate Cloud Engineer(2023)",
+        "G検定(2023)",
+        "Google Cloud Professional Cloud Architect(2023)",
+        "Google Cloud Professional Machine Learning Engineer(2023)",
+      ],
     },
     hobbies: {
       title: "趣味",
       items: [
         {
-          emoji: "📚",
-          title: "読書",
-          description: ["技術書", "SF小説"],
-          apps: [],
-        },
-        {
-          emoji: "🎸",
-          title: "ギター",
-          description: ["アコースティックギター", "エレキギター"],
-          apps: [],
-        },
-        {
-          emoji: "🏃",
-          title: "ランニング",
-          description: ["マラソン練習", "トレイルランニング"],
-          apps: [],
-        },
-        {
           emoji: "📷",
-          title: "写真撮影",
-          description: ["ストリート写真", "風景写真"],
+          title: "写真・動画 撮影",
+          description: ["風景", "ポートレート", "シネマティック動画"],
+          apps: [],
+        },
+        {
+          emoji: "⚒️",
+          title: "ものづくり",
+          description: ["アプリ開発", "電子工作", "木工工作"],
           apps: [
-            {
-              name: "フォトギャラリーアプリ",
-              url: "https://example.com/photo-gallery",
-            },
+            // {
+            //   name: "フォトギャラリーアプリ",
+            //   url: "https://example.com/photo-gallery",
+            // },
           ],
+        },
+        {
+          emoji: "🍵",
+          title: "茶道",
+          description: ["裏千家"],
+          apps: [],
+        },
+        {
+          emoji: "🏕️",
+          title: "キャンプ",
+          description: ["グルキャン"],
+          apps: [],
+        },
+        {
+          emoji: "🖼️",
+          title: "美術鑑賞",
+          description: ["オランダ", "レンブラント", "印象派"],
+          apps: [],
         },
       ],
     },
@@ -114,13 +124,14 @@ export const ja = {
         title: "特許",
         items: [
           {
-            title: "画像処理に関する特許",
+            title:
+              "表示制御装置、ヘッドアップディスプレイ装置、及び表示制御方法",
             number: "特許第1234567号",
             url: "https://patents.google.com/patent/JP1234567",
           },
           {
-            title: "データ分析手法に関する特許",
-            number: "特許第7654321号",
+            title: "XXXXXXXXXX",
+            number: "XXXXXXX",
             url: "https://patents.google.com/patent/JP7654321",
           },
         ],
@@ -129,20 +140,18 @@ export const ja = {
         title: "論文",
         items: [
           {
-            title: "機械学習を用いた画像認識の研究",
-            journal: "情報処理学会論文誌, 2022年",
-            url: "https://doi.org/10.1234/journal.2022",
-          },
-          {
-            title: "クラウドシステムの可用性に関する研究",
-            journal: "○○学会誌, 2021年",
-            url: "https://doi.org/10.5678/journal.2021",
+            title:
+              "査読あり論文「Vibration distribution measurement using down sampling phase shifting interferometer」(2020)",
+            journal: "Optical Engineering, First author",
+            url: "https://www.spiedigitallibrary.org/journals/optical-engineering/volume-59/issue-3/034112/Vibration-distribution-measurement-using-downsampling-phase-shifting-interferometer/10.1117/1.OE.59.3.034112.short?SSO=1",
           },
         ],
       },
       awards: {
-        title: "受賞歴",
-        items: ["○○学会 優秀論文賞（2022年）", "△△ハッカソン 優勝（2021年）"],
+        title: "登壇",
+        items: [
+          "ISMTII(International Symposium on Measurement Technology and Intelligent Instruments) - 国際会議 口頭発表(2019)",
+        ],
       },
     },
   },
@@ -150,28 +159,40 @@ export const ja = {
     title: "ギャラリー",
     items: [
       {
-        title: "山の風景",
-        url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        title: "秋光",
+        url: hikari,
       },
       {
-        title: "海の夕暮れ",
-        url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        title: "過去",
+        url: sunset,
       },
       {
-        title: "都市の夜景",
-        url: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad",
+        title: "揺らめき",
+        url: yurameki,
       },
       {
-        title: "森の小道",
-        url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+        title: "紫陽花",
+        url: ajisai,
       },
       {
-        title: "緑の森",
-        url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+        title: "桜樹",
+        url: sakura,
       },
       {
-        title: "夕暮れの空",
-        url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
+        title: "旅",
+        url: amsterdam,
+      },
+      {
+        title: "透明",
+        url: ramune,
+      },
+      {
+        title: "夕露",
+        url: redsun,
+      },
+      {
+        title: "キリトリ",
+        url: kiritori,
       },
     ],
   },
