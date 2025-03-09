@@ -127,14 +127,21 @@ export const en = {
         items: [
           {
             title:
-              "Display control device, head-up display device, and display control method",
-            number: "Patent No. 1234567",
-            url: "https://patents.google.com/patent/JP1234567",
+              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
+            number: "Publication number2023-046339",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2023-046339/11/ja",
           },
           {
-            title: "XXXXXXXXXX",
-            number: "XXXXXXX",
-            url: "https://patents.google.com/patent/JP7654321",
+            title:
+              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
+            number: "Publication number2024-017509",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017509/11/ja",
+          },
+          {
+            title:
+              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
+            number: "Publication number2024-017515",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017515/11/ja",
           },
         ],
       },

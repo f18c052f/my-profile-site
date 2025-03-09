@@ -126,13 +126,20 @@ export const ja = {
           {
             title:
               "表示制御装置、ヘッドアップディスプレイ装置、及び表示制御方法",
-            number: "特許第1234567号",
-            url: "https://patents.google.com/patent/JP1234567",
+            number: "特開2023-046339",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2023-046339/11/ja",
           },
           {
-            title: "XXXXXXXXXX",
-            number: "XXXXXXX",
-            url: "https://patents.google.com/patent/JP7654321",
+            title:
+              "表示制御装置、ヘッドアップディスプレイ装置、及び表示制御方法",
+            number: "特開2024-017509",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017509/11/ja",
+          },
+          {
+            title:
+              "表示制御装置、ヘッドアップディスプレイ装置、及び表示制御方法",
+            number: "特開2024-017515",
+            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017515/11/ja",
           },
         ],
       },
