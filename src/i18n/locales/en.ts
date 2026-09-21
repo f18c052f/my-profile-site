@@ -60,16 +60,35 @@ export const en = {
     },
     skills: {
       title: 'Skills',
-      categories: {
-        'Programming Languages': 'Programming Languages/Frameworks/Libraries',
-        // "Frameworks/Libraries": "Frameworks/Libraries",
-        Tools: 'Tools',
-        Qualifications: 'Qualifications',
-      },
+      domainsTitle: 'What I work on',
+      domains: [
+        {
+          name: 'Web systems',
+          description:
+            'Involved in in-house services from planning through development, maintenance and operation, and in basic design support on contract projects. Experienced in both Scrum and Waterfall.',
+        },
+        {
+          name: 'Android / iOS apps',
+          description:
+            'Built proof-of-concept smartphone apps with accessibility in mind, and handled maintenance including app store policy compliance.',
+        },
+        {
+          name: 'Unity with external sensors (PoC)',
+          description:
+            'Proof-of-concept development combining Unity with external sensors, including an in-vehicle AR system, plus load evaluation of embedded systems.',
+        },
+        {
+          name: 'Data analysis',
+          description:
+            'Sensory evaluation and data analysis using the results of proof-of-concept work, and building collection and visualisation pipelines for IoT data.',
+        },
+      ],
+      technologiesTitle: 'Technologies I reach for',
+      qualificationsTitle: 'Certifications',
       qualifications: [
         'TOEIC 845 (2022)',
         'Google Cloud Associate Cloud Engineer (2023)',
-        'G Certification (2023)',
+        'JDLA Deep Learning for GENERAL (2023)',
         'Google Cloud Professional Cloud Architect (2023)',
         'Google Cloud Professional Machine Learning Engineer (2023)',
       ],

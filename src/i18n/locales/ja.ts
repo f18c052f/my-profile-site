@@ -57,12 +57,31 @@ export const ja = {
     },
     skills: {
       title: 'スキル',
-      categories: {
-        'Programming Languages': 'プログラミング言語/フレームワーク/ライブラリ',
-        // "Frameworks/Libraries": "フレームワーク/ライブラリ",
-        Tools: 'ツール',
-        Qualifications: '資格',
-      },
+      domainsTitle: '対応領域',
+      domains: [
+        {
+          name: 'Web システム',
+          description:
+            '自社サービスの企画から開発・保守運用まで一通り担当。受託案件では基本設計支援も行っています。スクラム開発とウォーターフォール開発のいずれも経験があります。',
+        },
+        {
+          name: 'Android / iOS アプリ',
+          description:
+            'アクセシビリティを考慮したスマートフォンアプリの PoC 作成。ストアの規約対応を含む保守運用も担当しています。',
+        },
+        {
+          name: 'Unity + 外付けセンサの PoC',
+          description:
+            'Unity と外付けセンサを組み合わせた概念実証の開発。車両向けの AR システム構築や、組込みシステムの負荷評価に携わりました。',
+        },
+        {
+          name: 'データ分析',
+          description:
+            'PoC の成果物を用いた感性評価とデータ分析。IoT データの収集・可視化の仕組みづくりも行っています。',
+        },
+      ],
+      technologiesTitle: '主に使う技術',
+      qualificationsTitle: '資格',
       qualifications: [
         'TOEIC 845点(2022)',
         'Google Cloud Associate Cloud Engineer(2023)',

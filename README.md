@@ -44,7 +44,7 @@ Vite の `base` を GitHub Pages のサブパスに固定しており、環境�
 | 対象                                                             | ファイル                                            |
 | ---------------------------------------------------------------- | --------------------------------------------------- |
 | 自己紹介・学歴・職務経歴・資格・趣味・実績・ギャラリーのタイトル | `src/i18n/locales/ja.ts` / `src/i18n/locales/en.ts` |
-| スキル項目とアイコン名（変更したら `pnpm icons:build`）          | `src/data/skills.ts`                                |
+| 代表技術とアイコン名（変更したら `pnpm icons:build`）            | `src/data/skills.ts`                                |
 | 画像                                                             | `src/assets/images/`                                |
 | 公開 URL・GitHub URL                                             | `src/config/site.ts`                                |
 
