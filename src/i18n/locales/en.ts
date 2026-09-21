@@ -117,7 +117,7 @@ export const en = {
         {
           emoji: '🎬',
           title: 'Films',
-          description: ['Western films', 'Horror', 'Suspense', 'CG'],
+          description: ['Foreign films', 'Horror', 'Suspense', 'CG'],
           apps: [] as HobbyApp[],
         },
         {
