@@ -1,5 +1,5 @@
 import type { ja } from './ja';
-import type { CareerSection, HobbyApp } from '../types';
+import type { HobbyApp } from '../types';
 
 export const en = {
   a11y: {
@@ -32,69 +32,29 @@ export const en = {
         {
           year: '2020',
           description:
-            'Completed the Graduated School of Science and Technology, a national university',
+            'M.Eng. in Electronics and Information Engineering, at a national university people can never agree is in Tohoku or Hokuriku',
         },
         {
           year: '2018',
           description:
-            'Graduated from the Department of Electrical and Electronic Engineering, Faculty of Engineering, a national university',
+            'B.Eng. in Electrical and Electronic Engineering, at a national university people can never agree is in Tohoku or Hokuriku',
         },
       ],
     },
     career: {
       title: 'Career',
-      showDetails: 'Show details',
-      hideDetails: 'Hide details',
       items: [
         {
           year: '2023 - Present',
           company: 'SIer',
           position: 'Engineer',
-          summary: 'Belonging to the New Business Creation Department',
-          details: {
-            intro: [
-              'Joined a systems integrator',
-              'Engaged in a wide range of projects, mainly web and smartphone applications, including new planning, R&D, development, maintenance, and operation of in-house services, as well as basic design support and development for contracted projects.',
-              'Experienced in both Scrum and Waterfall development.',
-            ],
-            sections: [
-              {
-                heading: '2023',
-                points: [
-                  'Contract project: Development support in a supercomputer environment (document creation, batch program creation, testing, various investigations) (Linux/Python)',
-                  'New business planning based on in-house services: PoC creation of a smartphone application considering accessibility (ReactNative/TypeScript/Firebase/Looker)',
-                ],
-              },
-              {
-                heading: '2024',
-                points: [
-                  'New business planning based on in-house services (continued): Collaboration with other companies, demonstrations and user interviews with end users (presentation in English in the Philippines)',
-                  'Maintenance and operation of in-house services: Compliance with Google Play/Apple Store terms',
-                ],
-              },
-              {
-                heading: '2025',
-                points: [
-                  'Contract project: Basic design support (business flow organization, demonstration using mocks)',
-                  'Internal small-scale study group: IoT application development (AWS IoT Core/Streamlit/ESP32)',
-                ],
-              },
-            ] as CareerSection[],
-          },
+          summary: 'New business division',
         },
         {
           year: '2020 - 2023',
           company: 'Automotive Equipment Manufacturer',
           position: 'Engineer',
-          summary: 'Belonging to the R&D Division',
-          details: {
-            intro: [
-              'Joined an automotive equipment manufacturer',
-              'Mainly in charge of elemental technology development for next-generation in-vehicle products, engaged in PoC (Proof of Concept) development, sensory evaluation using the results, data analysis, and patent application.',
-              'In the software field, performed tasks such as building an in-vehicle AR system and evaluating the load of embedded systems.',
-            ],
-            sections: [] as CareerSection[],
-          },
+          summary: 'Advanced development division',
         },
       ],
     },

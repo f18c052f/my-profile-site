@@ -55,9 +55,9 @@ test('モバイルのページ高が閾値を超えない', async ({ page }, tes
   });
   await page.waitForTimeout(600);
 
-  // 当初は約 8,300px だった。職務経歴の折りたたみ、スキルのチップ化、
-  // ギャラリーの 2 列化で約 5,000px まで下げている。
-  // 回帰検出用の閾値なので、意図して増やす場合はここも更新すること。
+  // 当初は約 8,300px だった。スキルのチップ化とギャラリーの 2 列化で
+  // 約 4,900px まで下げている。回帰検出用の閾値なので、
+  // 意図して増やす場合はここも更新すること。
   const height = await page.evaluate(() => document.body.scrollHeight);
-  expect(height).toBeLessThan(5600);
+  expect(height).toBeLessThan(5300);
 });
