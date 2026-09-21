@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Profile from './components/Profile';
 import Gallery from './components/Gallery';
-import { initAnalytics } from './utils/analytics';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -15,10 +14,6 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
-
-  useEffect(() => {
-    initAnalytics();
-  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);

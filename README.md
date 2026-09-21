@@ -46,17 +46,7 @@ Vite の `base` を GitHub Pages のサブパスに固定しており、環境�
 | 自己紹介・学歴・職務経歴・資格・趣味・実績・ギャラリーのタイトル | `src/i18n/locales/ja.ts` / `src/i18n/locales/en.ts` |
 | スキル項目と devicon のアイコンクラス                            | `src/data/skills.ts`                                |
 | 画像                                                             | `src/assets/images/`                                |
-| 公開 URL・GitHub URL・GA4 測定 ID                                | `src/config/site.ts`                                |
-
-## アクセス解析
-
-GA4 を `gtag.js` で直接読み込みます（`src/utils/analytics.ts`）。`src/config/site.ts` の `gaMeasurementId` が空文字の間は計測スクリプトを一切読み込みません。
-
-以下の場合は計測しません。
-
-- 測定 ID が未設定
-- 開発サーバー（`import.meta.env.DEV`）
-- ブラウザの Do Not Track が有効
+| 公開 URL・GitHub URL                                             | `src/config/site.ts`                                |
 
 ## デプロイ
 
