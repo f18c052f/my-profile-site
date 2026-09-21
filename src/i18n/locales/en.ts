@@ -65,22 +65,22 @@ export const en = {
         {
           name: 'Web systems',
           description:
-            'Involved in in-house services from planning through development, maintenance and operation, and in basic design support on contract projects. Experienced in both Scrum and Waterfall.',
+            'Contract projects and in-house services, from planning through development, maintenance and operation. Experienced in both Scrum and Waterfall.',
         },
         {
           name: 'Android / iOS apps',
           description:
-            'Built proof-of-concept smartphone apps with accessibility in mind, and handled maintenance including app store policy compliance.',
+            'Proof-of-concept smartphone apps built with accessibility in mind. Also handled app store policy compliance.',
         },
         {
           name: 'Unity with external sensors (PoC)',
           description:
-            'Proof-of-concept development combining Unity with external sensors, including an in-vehicle AR system, plus load evaluation of embedded systems.',
+            'Proof-of-concept development combining Unity with external sensors. Built an in-vehicle AR system and evaluated the load of embedded systems.',
         },
         {
           name: 'Data analysis',
           description:
-            'Sensory evaluation and data analysis using the results of proof-of-concept work, and building collection and visualisation pipelines for IoT data.',
+            'Sensory evaluation and data analysis using the results of proof-of-concept work.',
         },
       ],
       technologiesTitle: 'Technologies I reach for',
@@ -115,9 +115,9 @@ export const en = {
           apps: [] as HobbyApp[],
         },
         {
-          emoji: '🏕️',
-          title: 'Camping',
-          description: ['Group Camping'],
+          emoji: '🎬',
+          title: 'Films',
+          description: ['Western films', 'Horror', 'Suspense', 'CG'],
           apps: [] as HobbyApp[],
         },
         {
