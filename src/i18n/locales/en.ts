@@ -43,6 +43,8 @@ export const en = {
     },
     career: {
       title: 'Career',
+      showDetails: 'Show details',
+      hideDetails: 'Hide details',
       items: [
         {
           year: '2023 - Present',
@@ -190,6 +192,13 @@ export const en = {
   },
   gallery: {
     title: 'Gallery',
+    lightbox: {
+      open: 'View {{title}} larger',
+      close: 'Close',
+      previous: 'Previous photo',
+      next: 'Next photo',
+      position: '{{current}} of {{total}}',
+    },
     items: {
       hikari: { title: 'Autumn Light', alt: 'Yellow maple leaves glowing against the backlight' },
       sunset: { title: 'Past', alt: 'Two people holding each other by a river at dusk' },

@@ -40,6 +40,8 @@ export const ja = {
     },
     career: {
       title: '職務経歴',
+      showDetails: '詳細を見る',
+      hideDetails: '詳細を閉じる',
       items: [
         {
           year: '2023 - 現在',
@@ -187,6 +189,13 @@ export const ja = {
   },
   gallery: {
     title: 'ギャラリー',
+    lightbox: {
+      open: '{{title}} を拡大表示する',
+      close: '閉じる',
+      previous: '前の写真',
+      next: '次の写真',
+      position: '{{current}} / {{total}}',
+    },
     items: {
       hikari: { title: '秋光', alt: '逆光に透ける黄色い紅葉の枝' },
       sunset: { title: '過去', alt: '夕暮れの川辺で寄り添う二人の後ろ姿' },

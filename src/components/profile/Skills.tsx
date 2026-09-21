@@ -8,56 +8,63 @@ import Card from '../ui/Card';
 import SectionHeading from '../ui/SectionHeading';
 import { revealProps } from '../ui/reveal';
 
+/**
+ * 1 列のグリッドだと 23 項目が 23 行になりモバイルで 1600px 近く占めるため、
+ * アイコンと名前を 1 つのチップにまとめて折り返す。
+ */
+const chipClass =
+  'inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-fg-muted';
+
 const Skills: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <motion.div {...revealProps} className="mb-8 md:mb-12">
       <SectionHeading icon={Code}>{t('profile.skills.title')}</SectionHeading>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      <div className="space-y-4 md:space-y-6">
         {skillCategories.map((category) => (
           <Card key={category}>
-            <h4 className="mb-4 font-medium text-fg">
+            <h4 className="mb-3 font-medium text-fg">
               {t(`profile.skills.categories.${category}`)}
             </h4>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {skills[category].map((item, index) => (
-                <div key={index} className="flex items-center space-x-3">
+            <ul className="flex flex-wrap gap-2">
+              {skills[category].map((item) => (
+                <li key={item.name} className={chipClass}>
                   {/*
                     ブランド色が黒や濃灰のアイコン（carbon-original は #000000、
                     wordpress-plain は #494949）は暗い背景に沈むため、
                     ダークモードでのみ明るい下地を敷く。
                     配色トークンではなく可読性のための処置なので dark: を直接使う。
                   */}
-                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded dark:bg-white/85">
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded dark:bg-white/85">
                     <img
                       src={skillIcons[item.icon]}
                       alt=""
                       aria-hidden="true"
-                      className="h-5 w-5"
+                      className="h-4 w-4"
                     />
                   </span>
-                  <span className="break-words text-fg-muted">{item.name}</span>
-                </div>
+                  {item.name}
+                </li>
               ))}
-            </div>
+            </ul>
           </Card>
         ))}
 
         <Card>
-          <h4 className="mb-4 font-medium text-fg">
+          <h4 className="mb-3 font-medium text-fg">
             {t('profile.skills.categories.Qualifications')}
           </h4>
-          <div className="grid grid-cols-1 gap-4">
+          <ul className="space-y-2">
             {t('profile.skills.qualifications', { returnObjects: true }).map(
               (qualification: string, index: number) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <Award className="h-6 w-6 flex-shrink-0 text-accent" aria-hidden="true" />
-                  <span className="break-words text-fg-muted">{qualification}</span>
-                </div>
+                <li key={index} className="flex items-start gap-2 text-sm text-fg-muted">
+                  <Award className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" aria-hidden="true" />
+                  <span className="break-words">{qualification}</span>
+                </li>
               ),
             )}
-          </div>
+          </ul>
         </Card>
       </div>
     </motion.div>
