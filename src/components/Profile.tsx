@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Container from './ui/Container';
 import Education from './profile/Education';
 import Career from './profile/Career';
 import Skills from './profile/Skills';
@@ -10,9 +11,9 @@ const Profile: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="profile" className="min-h-screen pt-20 pb-16 px-4 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+    <section id="profile" className="bg-surface py-16 md:py-24">
+      <Container>
+        <h2 className="mb-8 text-center text-3xl font-bold text-fg md:mb-12">
           {t('profile.title')}
         </h2>
 
@@ -21,7 +22,7 @@ const Profile: React.FC = () => {
         <Skills />
         <Hobbies />
         <Achievements />
-      </div>
+      </Container>
     </section>
   );
 };

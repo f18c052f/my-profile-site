@@ -2,26 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import SectionHeading from '../ui/SectionHeading';
+import { revealProps } from '../ui/reveal';
 
 const Education: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="mb-12"
-    >
-      <h3 className="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
-        <BookOpen className="mr-2" /> {t('profile.education.title')}
-      </h3>
+    <motion.div {...revealProps} className="mb-8 md:mb-12">
+      <SectionHeading icon={BookOpen}>{t('profile.education.title')}</SectionHeading>
       <div className="space-y-4">
         {t('profile.education.items', { returnObjects: true }).map((item, index: number) => (
           <div key={index} className="flex">
-            <div className="w-24 flex-shrink-0 text-gray-600 dark:text-gray-400">{item.year}</div>
-            <div className="flex-grow pl-4 border-l-2 border-gray-200 dark:border-gray-700">
-              <p className="text-gray-800 dark:text-gray-200">{item.description}</p>
+            <div className="w-24 flex-shrink-0 text-fg-subtle">{item.year}</div>
+            <div className="flex-grow border-l-2 border-border pl-4">
+              <p className="text-fg">{item.description}</p>
             </div>
           </div>
         ))}

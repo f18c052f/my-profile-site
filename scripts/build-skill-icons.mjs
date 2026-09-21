@@ -61,7 +61,9 @@ async function build() {
   ];
   await fs.writeFile(path.join(OUT_DIR, 'index.ts'), lines.join('\n'), 'utf8');
 
-  console.log(`${unique.length} 個のアイコンを ${OUT_DIR} に取り込みました（合計 ${(total / 1024).toFixed(1)} KB）`);
+  console.log(
+    `${unique.length} 個のアイコンを ${OUT_DIR} に取り込みました（合計 ${(total / 1024).toFixed(1)} KB）`,
+  );
 }
 
 function identifier(name) {

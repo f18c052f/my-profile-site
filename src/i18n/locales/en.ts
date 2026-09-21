@@ -2,6 +2,18 @@ import type { ja } from './ja';
 import type { CareerSection, HobbyApp } from '../types';
 
 export const en = {
+  a11y: {
+    toggleLanguage: 'Switch language',
+    switchToDark: 'Switch to dark mode',
+    switchToLight: 'Switch to light mode',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    github: 'Open the GitHub profile',
+    email: 'Send an email',
+  },
+  footer: {
+    copyright: '© {{year}} Y.Ohara. All rights reserved.',
+  },
   header: {
     profile: 'Profile',
     gallery: 'Gallery',

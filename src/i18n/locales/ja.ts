@@ -1,6 +1,18 @@
 import type { CareerSection, HobbyApp } from '../types';
 
 export const ja = {
+  a11y: {
+    toggleLanguage: '言語を切り替える',
+    switchToDark: 'ダークモードに切り替える',
+    switchToLight: 'ライトモードに切り替える',
+    openMenu: 'メニューを開く',
+    closeMenu: 'メニューを閉じる',
+    github: 'GitHub のプロフィールを開く',
+    email: 'メールを送る',
+  },
+  footer: {
+    copyright: '© {{year}} Y.Ohara. All rights reserved.',
+  },
   header: {
     profile: 'プロフィール',
     gallery: 'ギャラリー',

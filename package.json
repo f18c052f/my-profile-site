@@ -23,6 +23,7 @@
     "icons:build": "node scripts/build-skill-icons.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
     "framer-motion": "^11.0.8",
     "i18next": "^23.10.1",
     "i18next-browser-languagedetector": "^7.2.0",

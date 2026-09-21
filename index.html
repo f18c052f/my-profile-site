@@ -1,11 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Profile</title>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script>
+      // 初回描画の前にテーマを確定させる。これがないとダークモード利用者に
+      // 一瞬だけ白い画面が出る（flash of wrong theme）。
+      // localStorage が使えない環境でも落ちないよう try/catch で包む。
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark =
+            stored === 'dark' ||
+            (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {
+          /* 何もしない。既定のライトテーマで表示する */
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
