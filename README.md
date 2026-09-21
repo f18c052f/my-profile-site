@@ -73,3 +73,11 @@ base 付きで配信するため、サブパス周りの破綻を CI が検出�
 
 独自ドメインに移行する場合は `vite.config.ts` の `base` を `'/'` に戻し、
 `public/CNAME` を追加してください。
+
+## ドキュメント
+
+| ファイル                                     | 内容               |
+| -------------------------------------------- | ------------------ |
+| [doc/rdd.md](doc/rdd.md)                     | 要件定義           |
+| [doc/screen_design.md](doc/screen_design.md) | 画面設計           |
+| [doc/decisions.md](doc/decisions.md)         | 技術判断とその理由 |
