@@ -1,5 +1,6 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "my-profile-site",
+  "description": "Y.Ohara のプロフィールサイト",
   "private": true,
   "version": "0.0.0",
   "type": "module",
