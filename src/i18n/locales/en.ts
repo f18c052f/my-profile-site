@@ -1,16 +1,6 @@
 import type { ja } from './ja';
 import type { CareerSection, HobbyApp } from '../types';
 
-import hikari from '../../assets/images/IMGP0803.jpeg';
-import sunset from '../../assets/images/IMGP3645_ret.jpg';
-import yurameki from '../../assets/images/IMGP5227_ret.jpg';
-import ajisai from '../../assets/images/IMGP9249.jpeg';
-import sakura from '../../assets/images/DSC02515.jpg';
-import amsterdam from '../../assets/images/amsterdam.jpg';
-import ramune from '../../assets/images/DSC00678.jpeg';
-import redsun from '../../assets/images/DSC00875_ex.jpeg';
-import kiritori from '../../assets/images/IMGP8660.jpeg';
-
 export const en = {
   header: {
     profile: 'Profile',
@@ -20,6 +10,7 @@ export const en = {
     title: "Y.Ohara's Profile",
     introduction:
       'Born in 1995, I am a father of one child, originally from Toyama Prefecture and currently residing in Niigata Prefecture. During my student days, I mainly studied hardware such as electronic circuits and optical interferometers, but I have ended up working as a software engineer.',
+    portraitAlt: 'Portrait of the author',
   },
   profile: {
     title: 'Profile',
@@ -187,43 +178,25 @@ export const en = {
   },
   gallery: {
     title: 'Gallery',
-    items: [
-      {
-        title: 'Autumn Light',
-        url: hikari,
-      },
-      {
-        title: 'Past',
-        url: sunset,
-      },
-      {
-        title: 'Flicker',
-        url: yurameki,
-      },
-      {
-        title: 'Hydrangea',
-        url: ajisai,
-      },
-      {
-        title: 'Cherry Tree',
-        url: sakura,
-      },
-      {
+    items: {
+      hikari: { title: 'Autumn Light', alt: 'Yellow maple leaves glowing against the backlight' },
+      sunset: { title: 'Past', alt: 'Two people holding each other by a river at dusk' },
+      yurameki: { title: 'Flicker', alt: 'A figure blurred behind rising steam and bokeh' },
+      ajisai: { title: 'Hydrangea', alt: 'A cluster of blue hydrangeas after the rain' },
+      sakura: { title: 'Cherry Tree', alt: 'Cherry petals scattered over mossy tree roots' },
+      amsterdam: {
         title: 'Travel',
-        url: amsterdam,
+        alt: 'Travellers crossing the square in front of Amsterdam Centraal',
       },
-      {
-        title: 'Transparency',
-        url: ramune,
-      },
-      {
+      ramune: { title: 'Transparency', alt: 'A hand holding a ramune bottle above white pebbles' },
+      redsun: {
         title: 'Evening Dew',
-        url: redsun,
+        alt: 'A silhouette against the sea with a red column of sunset light',
       },
-      {
+      kiritori: {
         title: 'Cropping',
-        url: kiritori,
+        alt: 'A person raising a camera on a tree-lined path in fresh greenery',
       },
-    ],
+    },
   },
 } satisfies typeof ja;

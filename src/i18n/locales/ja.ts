@@ -1,15 +1,5 @@
 import type { CareerSection, HobbyApp } from '../types';
 
-import hikari from '../../assets/images/IMGP0803.jpeg';
-import sunset from '../../assets/images/IMGP3645_ret.jpg';
-import yurameki from '../../assets/images/IMGP5227_ret.jpg';
-import ajisai from '../../assets/images/IMGP9249.jpeg';
-import sakura from '../../assets/images/DSC02515.jpg';
-import amsterdam from '../../assets/images/amsterdam.jpg';
-import ramune from '../../assets/images/DSC00678.jpeg';
-import redsun from '../../assets/images/DSC00875_ex.jpeg';
-import kiritori from '../../assets/images/IMGP8660.jpeg';
-
 export const ja = {
   header: {
     profile: 'プロフィール',
@@ -19,6 +9,7 @@ export const ja = {
     title: "Y.Ohara's Profile",
     introduction:
       '1995年生まれ、富山県出身、新潟県在住の一児の父です。学生時代は電子回路や光干渉計といったハードウェアをメインに学んでいましたが、気づけばソフトウェアエンジニアとして働いています。',
+    portraitAlt: '撮影者本人のポートレート',
   },
   profile: {
     title: 'プロフィール',
@@ -184,43 +175,16 @@ export const ja = {
   },
   gallery: {
     title: 'ギャラリー',
-    items: [
-      {
-        title: '秋光',
-        url: hikari,
-      },
-      {
-        title: '過去',
-        url: sunset,
-      },
-      {
-        title: '揺らめき',
-        url: yurameki,
-      },
-      {
-        title: '紫陽花',
-        url: ajisai,
-      },
-      {
-        title: '桜樹',
-        url: sakura,
-      },
-      {
-        title: '旅',
-        url: amsterdam,
-      },
-      {
-        title: '透明',
-        url: ramune,
-      },
-      {
-        title: '夕露',
-        url: redsun,
-      },
-      {
-        title: 'キリトリ',
-        url: kiritori,
-      },
-    ],
+    items: {
+      hikari: { title: '秋光', alt: '逆光に透ける黄色い紅葉の枝' },
+      sunset: { title: '過去', alt: '夕暮れの川辺で寄り添う二人の後ろ姿' },
+      yurameki: { title: '揺らめき', alt: '湯気と光の玉に包まれてぼやける人影' },
+      ajisai: { title: '紫陽花', alt: '雨上がりの青い紫陽花の群れ' },
+      sakura: { title: '桜樹', alt: '苔むした木の根元に散り敷いた桜の花びら' },
+      amsterdam: { title: '旅', alt: 'アムステルダム中央駅前の広場を行き交う旅行者' },
+      ramune: { title: '透明', alt: '白い小石の上でラムネの瓶を手に持つ' },
+      redsun: { title: '夕露', alt: '夕焼けの海に立つ人物のシルエットと縦に伸びる赤い光' },
+      kiritori: { title: 'キリトリ', alt: '新緑の並木道でカメラを構える人' },
+    },
   },
 };

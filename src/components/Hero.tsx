@@ -2,20 +2,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import desk from '../assets/images/DSC07060.jpg';
-import yo from '../assets/images/IMGP1057.jpeg';
+import { images } from '../assets/images/generated/manifest';
+import ResponsiveImage from './ui/ResponsiveImage';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${desk})`,
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        {/*
+          CSS の background-image では srcSet が使えず、モバイルでも原寸を
+          落としてしまうため img で配信する。ファーストビュー（LCP 要素）
+          なので遅延読み込みにはしない。装飾なので alt は空にする。
+        */}
+        <ResponsiveImage
+          image={images.desk}
+          alt=""
+          sizes="100vw"
+          priority
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
@@ -26,9 +33,11 @@ const Hero: React.FC = () => {
         className="relative z-10 text-center text-white px-4 max-w-3xl"
       >
         <div className="mb-8">
-          <img
-            src={yo}
-            alt="Profile"
+          <ResponsiveImage
+            image={images.portrait}
+            alt={t('hero.portraitAlt')}
+            sizes="128px"
+            priority
             className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl object-cover"
           />
         </div>

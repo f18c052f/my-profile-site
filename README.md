@@ -48,6 +48,21 @@ Vite の `base` を GitHub Pages のサブパスに固定しており、環境�
 | 画像                                                             | `src/assets/images/`                                |
 | 公開 URL・GitHub URL                                             | `src/config/site.ts`                                |
 
+## 画像
+
+元画像は `assets-src/` に置き、`pnpm images:build` で `src/assets/images/generated/` に
+配信用の WebP（640 / 1280 / 1920px）と JPEG フォールバック、型付きの `manifest.ts` を生成します。
+生成物はコミットします。
+
+ビルド時プラグインにしていないのは、写真が年に数回しか変わらないのに CI の毎ビルドで
+数十 MB を再エンコードすることになるためです。
+
+写真を差し替える手順:
+
+1. `assets-src/` に画像を置く（ファイル名がそのままスラッグになります）
+2. `pnpm images:build`
+3. `src/data/gallery.ts` の並び順と、`src/i18n/locales/{ja,en}.ts` の `gallery.items` を更新
+
 ## デプロイ
 
 `main` への push で `.github/workflows/deploy.yml` が GitHub Pages に公開します。

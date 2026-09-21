@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { galleryItems } from '../data/gallery';
+import ResponsiveImage from './ui/ResponsiveImage';
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
-  const images = t('gallery.items', { returnObjects: true });
 
   return (
     <section id="gallery" className="min-h-screen pt-20 pb-16 px-4 bg-white dark:bg-gray-900">
@@ -19,23 +20,24 @@ const Gallery: React.FC = () => {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index: number) => (
+          {galleryItems.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative group overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9"
+              className="relative group overflow-hidden rounded-lg shadow-lg aspect-video"
             >
-              <img
-                src={image.url}
-                alt={image.title}
+              <ResponsiveImage
+                image={item.image}
+                alt={t(`gallery.items.${item.id}.alt`)}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
                 <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-medium">
-                  {image.title}
+                  {t(`gallery.items.${item.id}.title`)}
                 </p>
               </div>
             </motion.div>
