@@ -7,7 +7,7 @@ test('トップページが描画され、コンソールエラーが出ない',
   });
   page.on('pageerror', (err) => errors.push(err.message));
 
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('./', { waitUntil: 'networkidle' });
   await expect(page.locator('body')).toBeVisible();
 
   await testInfo.attach(`screenshot-${testInfo.project.name}`, {

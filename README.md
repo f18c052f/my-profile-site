@@ -12,6 +12,8 @@ Y.Ohara のプロフィールサイト。経歴・スキル・実績と、趣味
 
 バックエンドは持たない完全な静的サイトです。環境変数も不要で、`git clone` してすぐ動きます。
 
+GitHub Pages のプロジェクトページとして配信しています: <https://f18c052f.github.io/my-profile-site/>
+
 ## セットアップ
 
 ```bash
@@ -19,6 +21,10 @@ corepack enable   # 初回のみ。package.json の packageManager で pnpm の�
 pnpm install
 pnpm dev
 ```
+
+**開発サーバーは <http://localhost:5173/my-profile-site/> で開きます。** `/` は 404 になります。
+Vite の `base` を GitHub Pages のサブパスに固定しており、環境で分岐させていないためです
+（分岐させると base 起因の不具合がローカルで再現できなくなります）。
 
 ## スクリプト
 
@@ -51,3 +57,14 @@ GA4 を `gtag.js` で直接読み込みます（`src/utils/analytics.ts`）。`s
 - 測定 ID が未設定
 - 開発サーバー（`import.meta.env.DEV`）
 - ブラウザの Do Not Track が有効
+
+## デプロイ
+
+`main` への push で `.github/workflows/deploy.yml` が GitHub Pages に公開します。
+全ブランチと PR では `.github/workflows/ci.yml` が lint / format / typecheck / build / Playwright を実行します。
+
+CI の Playwright は `vite preview` に対して実行します。実際のビルド成果物を
+base 付きで配信するため、サブパス周りの破綻を CI が検出できます。
+
+独自ドメインに移行する場合は `vite.config.ts` の `base` を `'/'` に戻し、
+`public/CNAME` を追加してください。
