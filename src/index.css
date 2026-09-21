@@ -1,3 +1,58 @@
+/* Inter を self-host する。rsms.me からの読み込みは
+   レンダリングをブロックする第三者依存であり、先方が落ちると表示が崩れる。
+   unicode-range が付くので、ブラウザは必要なサブセットだけを落とす。 */
+@import '@fontsource-variable/inter';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /*
+   * 配色はここだけで管理する。値はスペース区切りの RGB にしてあり、
+   * Tailwind 側で rgb(var(--color-x) / <alpha-value>) として参照するため
+   * bg-surface/80 のような透明度指定がそのまま使える。
+   */
+  :root {
+    --color-bg: 255 255 255;
+    --color-surface: 249 250 251;
+    --color-surface-2: 255 255 255;
+    --color-border: 229 231 235;
+    --color-fg: 17 24 39;
+    --color-fg-muted: 75 85 99;
+    --color-fg-subtle: 107 114 128;
+    --color-accent: 37 99 235;
+    --color-accent-fg: 255 255 255;
+  }
+
+  .dark {
+    --color-bg: 17 24 39;
+    --color-surface: 31 41 55;
+    --color-surface-2: 55 65 81;
+    --color-border: 55 65 81;
+    --color-fg: 255 255 255;
+    --color-fg-muted: 209 213 219;
+    --color-fg-subtle: 156 163 175;
+    --color-accent: 96 165 250;
+    --color-accent-fg: 17 24 39;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* 固定ヘッダー h-16 = 4rem の分だけアンカー位置を下げる。
+       これがないとナビをクリックした見出しがヘッダーの下に潜る。 */
+    scroll-padding-top: 4rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    /* @apply ではなく変数を直接参照する（クラス生成に依存しない） */
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-fg));
+  }
+}

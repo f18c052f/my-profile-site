@@ -1,50 +1,54 @@
-import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Profile from "./components/Profile";
-import Gallery from "./components/Gallery";
-import { logPageView } from "./utils/analytics";
+import { useState, useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Profile from './components/Profile';
+import Gallery from './components/Gallery';
+import Container from './components/ui/Container';
+
+/** index.html のインラインスクリプトが初回描画前に付けた状態を引き継ぐ */
+function initialDarkMode(): boolean {
+  return document.documentElement.classList.contains('dark');
+}
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { t } = useTranslation();
+  const [isDarkMode, setIsDarkMode] = useState(initialDarkMode);
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    try {
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    } catch {
+      // プライベートウィンドウなどで保存できなくても表示は継続する
     }
   }, [isDarkMode]);
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      logPageView(window.location.pathname + window.location.hash);
-    };
-
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
-
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode((v) => !v);
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
-      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <Hero />
-      <Profile />
-      <Gallery />
-      <footer className="py-6 px-4 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-4xl mx-auto text-center text-sm text-gray-600 dark:text-gray-400">
-          © {new Date().getFullYear()} Y.Ohara . All rights reserved.
-        </div>
-      </footer>
-    </div>
+    // reducedMotion="user" の 1 行で、全コンポーネントの framer-motion が
+    // OS の「動きを減らす」設定を尊重するようになる
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen bg-bg transition-colors duration-200">
+        <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+        <main>
+          <Hero />
+          <Profile />
+          <Gallery />
+        </main>
+        <footer className="border-t border-border bg-surface py-6">
+          <Container>
+            <p className="text-center text-sm text-fg-muted">
+              {t('footer.copyright', { year: new Date().getFullYear() })}
+            </p>
+          </Container>
+        </footer>
+      </div>
+    </MotionConfig>
   );
 }
 

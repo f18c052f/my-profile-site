@@ -1,0 +1,21 @@
+# デフォルトはテキストとして扱い、リポジトリ内は LF に正規化する
+* text=auto eol=lf
+
+# バイナリ（正規化してはいけないもの）
+# gitattributes は gitignore と同じパターン構文で、ブレース展開は使えないため個別に列挙する
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# SVG はテキストだが差分が読みにくいので diff の対象から外す
+*.svg text eol=lf -diff
+
+# ロックファイルは生成物として扱い、言語統計と差分表示から外す
+pnpm-lock.yaml linguist-generated=true -diff
+package-lock.json linguist-generated=true -diff
