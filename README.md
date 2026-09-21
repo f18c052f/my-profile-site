@@ -5,6 +5,7 @@ Y.Ohara のプロフィールサイト。経歴・スキル・実績と、趣味
 ## 技術構成
 
 - Vite 6 + React 18 + TypeScript
+- pnpm（`packageManager` フィールドで固定、Corepack 前提）
 - Tailwind CSS 3 / framer-motion
 - i18next（日本語・英語）
 - Playwright（E2E・ビジュアル確認）
@@ -14,20 +15,21 @@ Y.Ohara のプロフィールサイト。経歴・スキル・実績と、趣味
 ## セットアップ
 
 ```bash
-npm install
-npm run dev
+corepack enable   # 初回のみ。package.json の packageManager で pnpm のバージョンが固定される
+pnpm install
+pnpm dev
 ```
 
 ## スクリプト
 
 | コマンド | 内容 |
 | --- | --- |
-| `npm run dev` | 開発サーバーを起動 |
-| `npm run build` | 型チェック（`typecheck`）を通してから本番ビルド |
-| `npm run typecheck` | `tsc --noEmit` をアプリ側・Node 側の両方に実行 |
-| `npm run lint` | ESLint |
-| `npm run preview` | ビルド成果物をローカル配信 |
-| `npm test` | Playwright（デスクトップ / モバイルの 2 プロジェクト） |
+| `pnpm dev` | 開発サーバーを起動 |
+| `pnpm build` | 型チェック（`typecheck`）を通してから本番ビルド |
+| `pnpm typecheck` | `tsc --noEmit` をアプリ側・Node 側の両方に実行 |
+| `pnpm lint` | ESLint |
+| `pnpm preview` | ビルド成果物をローカル配信 |
+| `pnpm test` | Playwright（デスクトップ / モバイルの 2 プロジェクト） |
 
 ## コンテンツの更新
 
