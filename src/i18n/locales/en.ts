@@ -1,5 +1,5 @@
 import type { ja } from "./ja";
-import type { HobbyApp } from "../types";
+import type { CareerSection, HobbyApp } from "../types";
 
 import hikari from "../../assets/images/IMGP0803.jpeg";
 import sunset from "../../assets/images/IMGP3645_ret.jpg";
@@ -40,30 +40,56 @@ export const en = {
     },
     career: {
       title: "Career",
-      auth: {
-        message: "Enter a password to view details.",
-        placeholder: "Enter password",
-        button: "View",
-        error: "Incorrect password. Please try again.",
-        systemError: "An error occurred. Please try again later.",
-        blocked: "Too many attempts. Please try again in {{seconds}} seconds.",
-      },
       items: [
         {
           year: "2023 - Present",
           company: "SIer",
           position: "Engineer",
           summary: "Belonging to the New Business Creation Department",
-          details:
-            "Joined a systems integrator\n\nEngaged in a wide range of projects, mainly web and smartphone applications, including new planning, R&D, development, maintenance, and operation of in-house services, as well as basic design support and development for contracted projects.\nExperienced in both Scrum and Waterfall development.\n\n# 2023\n - Contract project: Development support in a supercomputer environment (document creation, batch program creation, testing, various investigations) (Linux/Python)\n - New business planning based on in-house services: PoC creation of a smartphone application considering accessibility (ReactNative/TypeScript/Firebase/Looker)\n# 2024\n - New business planning based on in-house services (continued): Collaboration with other companies, demonstrations and user interviews with end users (presentation in English in the Philippines)\n - Maintenance and operation of in-house services: Compliance with Google Play/Apple Store terms\n# 2025\n - Contract project: Basic design support (business flow organization, demonstration using mocks)\n - Internal small-scale study group: IoT application development (AWS IoT Core/Streamlit/ESP32)",
+          details: {
+            intro: [
+              "Joined a systems integrator",
+              "Engaged in a wide range of projects, mainly web and smartphone applications, including new planning, R&D, development, maintenance, and operation of in-house services, as well as basic design support and development for contracted projects.",
+              "Experienced in both Scrum and Waterfall development.",
+            ],
+            sections: [
+              {
+                heading: "2023",
+                points: [
+                  "Contract project: Development support in a supercomputer environment (document creation, batch program creation, testing, various investigations) (Linux/Python)",
+                  "New business planning based on in-house services: PoC creation of a smartphone application considering accessibility (ReactNative/TypeScript/Firebase/Looker)",
+                ],
+              },
+              {
+                heading: "2024",
+                points: [
+                  "New business planning based on in-house services (continued): Collaboration with other companies, demonstrations and user interviews with end users (presentation in English in the Philippines)",
+                  "Maintenance and operation of in-house services: Compliance with Google Play/Apple Store terms",
+                ],
+              },
+              {
+                heading: "2025",
+                points: [
+                  "Contract project: Basic design support (business flow organization, demonstration using mocks)",
+                  "Internal small-scale study group: IoT application development (AWS IoT Core/Streamlit/ESP32)",
+                ],
+              },
+            ] as CareerSection[],
+          },
         },
         {
           year: "2020 - 2023",
           company: "Automotive Equipment Manufacturer",
           position: "Engineer",
           summary: "Belonging to the R&D Division",
-          details:
-            "Joined an automotive equipment manufacturer\n\nMainly in charge of elemental technology development for next-generation in-vehicle products, engaged in PoC (Proof of Concept) development, sensory evaluation using the results, data analysis, and patent application.\n\nIn the software field, performed tasks such as building an in-vehicle AR system and evaluating the load of embedded systems.",
+          details: {
+            intro: [
+              "Joined an automotive equipment manufacturer",
+              "Mainly in charge of elemental technology development for next-generation in-vehicle products, engaged in PoC (Proof of Concept) development, sensory evaluation using the results, data analysis, and patent application.",
+              "In the software field, performed tasks such as building an in-vehicle AR system and evaluating the load of embedded systems.",
+            ],
+            sections: [] as CareerSection[],
+          },
         },
       ],
     },

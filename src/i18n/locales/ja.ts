@@ -1,4 +1,4 @@
-import type { HobbyApp } from "../types";
+import type { CareerSection, HobbyApp } from "../types";
 
 import hikari from "../../assets/images/IMGP0803.jpeg";
 import sunset from "../../assets/images/IMGP3645_ret.jpg";
@@ -37,30 +37,56 @@ export const ja = {
     },
     career: {
       title: "職務経歴",
-      auth: {
-        message: "詳細を表示するにはパスワードを入力してください",
-        placeholder: "パスワードを入力",
-        button: "表示",
-        error: "パスワードが正しくありません。もう一度お試しください。",
-        systemError: "エラーが発生しました。後でもう一度お試しください。",
-        blocked: "試行回数が多すぎます。{{seconds}}秒後に再度お試しください。",
-      },
       items: [
         {
           year: "2023 - 現在",
           company: "SIer",
           position: "エンジニア",
           summary: "新規事業創出部所属",
-          details:
-            "SIerに入社。\n\nWebアプリやスマホアプリを中心に、自社サービスの新規企画・研究開発・製造・保守運用、および受託での基本設計支援・製造など、幅広い案件に参画。\nスクラム開発、ウォーターフォール開発のいずれも経験。\n\n# 2023\n ・受託案件：スパコン環境での開発支援 (ドキュメント作成、バッチ・プログラム作成、テスト、各種調査) (Linux/Python)\n ・自社サービスベースの新規事業企画：アクセシビリティを考慮したスマホアプリのPoC作成 (ReactNative/TypeScript/Firebase/Looker)\n# 2024\n ・自社サービスベースの新規事業企画 (継続)：他企業との共創、エンドユーザーへのデモ・ヒアリング (フィリピンで英語プレゼン実施)\n ・自社サービスの保守運用：Google Play/Apple Storeの規約対応\n# 2025\n ・受託案件：基本設計支援 (業務フロー整理、モックによるデモ)\n ・社内小規模研究会：IoTアプリ構築（AWS IoT Core/Streamlit/ESP32）",
+          details: {
+            intro: [
+              "SIerに入社。",
+              "Webアプリやスマホアプリを中心に、自社サービスの新規企画・研究開発・製造・保守運用、および受託での基本設計支援・製造など、幅広い案件に参画。",
+              "スクラム開発、ウォーターフォール開発のいずれも経験。",
+            ],
+            sections: [
+              {
+                heading: "2023",
+                points: [
+                  "受託案件：スパコン環境での開発支援 (ドキュメント作成、バッチ・プログラム作成、テスト、各種調査) (Linux/Python)",
+                  "自社サービスベースの新規事業企画：アクセシビリティを考慮したスマホアプリのPoC作成 (ReactNative/TypeScript/Firebase/Looker)",
+                ],
+              },
+              {
+                heading: "2024",
+                points: [
+                  "自社サービスベースの新規事業企画 (継続)：他企業との共創、エンドユーザーへのデモ・ヒアリング (フィリピンで英語プレゼン実施)",
+                  "自社サービスの保守運用：Google Play/Apple Storeの規約対応",
+                ],
+              },
+              {
+                heading: "2025",
+                points: [
+                  "受託案件：基本設計支援 (業務フロー整理、モックによるデモ)",
+                  "社内小規模研究会：IoTアプリ構築（AWS IoT Core/Streamlit/ESP32）",
+                ],
+              },
+            ] as CareerSection[],
+          },
         },
         {
           year: "2020 - 2023",
           company: "車載機器メーカー",
           position: "エンジニア",
           summary: "R&D事業部所属",
-          details:
-            "車載機器メーカーに入社。\n\n主に次世代車載製品の要素技術開発を担当し、PoC (概念実証) の開発、成果物を用いた感性評価、データ分析、特許出願等の業務に従事。\n\nソフトウェア領域においては、車両向けARシステムの構築、組込みシステムの負荷評価等を実施。",
+          details: {
+            intro: [
+              "車載機器メーカーに入社。",
+              "主に次世代車載製品の要素技術開発を担当し、PoC (概念実証) の開発、成果物を用いた感性評価、データ分析、特許出願等の業務に従事。",
+              "ソフトウェア領域においては、車両向けARシステムの構築、組込みシステムの負荷評価等を実施。",
+            ],
+            sections: [] as CareerSection[],
+          },
         },
       ],
     },

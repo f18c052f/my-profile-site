@@ -7,3 +7,6 @@
 
 /** 趣味に紐づく公開中のアプリへのリンク */
 export type HobbyApp = { name: string; url: string };
+
+/** 職務経歴の詳細のうち、見出し付きの箇条書き1ブロック */
+export type CareerSection = { heading: string; points: string[] };

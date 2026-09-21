@@ -1,13 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { trackSectionView } from '../utils/analytics';
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
   const images = t('gallery.items', { returnObjects: true });
 
   return (
-    <section id="gallery" className="min-h-screen pt-20 pb-16 px-4 bg-white dark:bg-gray-900">
+    <motion.section
+      id="gallery"
+      viewport={{ once: true }}
+      onViewportEnter={() => trackSectionView('gallery')}
+      className="min-h-screen pt-20 pb-16 px-4 bg-white dark:bg-gray-900"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +48,7 @@ const Gallery: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

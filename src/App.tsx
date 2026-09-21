@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Profile from "./components/Profile";
 import Gallery from "./components/Gallery";
-import { logPageView } from "./utils/analytics";
+import { initAnalytics } from "./utils/analytics";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,16 +17,7 @@ function App() {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      logPageView(window.location.pathname + window.location.hash);
-    };
-
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
+    initAnalytics();
   }, []);
 
   const toggleDarkMode = () => {
