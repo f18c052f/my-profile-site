@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import desk from "../assets/images/DSC07060.jpg";
 import yo from "../assets/images/IMGP1057.jpeg";

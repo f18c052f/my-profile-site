@@ -20,7 +20,7 @@ const Achievements: React.FC = () => {
         <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
           <h4 className="font-medium mb-4 text-gray-900 dark:text-white">{t('profile.achievements.patents.title')}</h4>
           <ul className="space-y-3">
-            {t('profile.achievements.patents.items', { returnObjects: true }).map((patent: any, index: number) => (
+            {t('profile.achievements.patents.items', { returnObjects: true }).map((patent, index: number) => (
               <li key={index} className="flex items-start">
                 <a
                   href={patent.url}
@@ -40,7 +40,7 @@ const Achievements: React.FC = () => {
         <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm">
           <h4 className="font-medium mb-4 text-gray-900 dark:text-white">{t('profile.achievements.publications.title')}</h4>
           <ul className="space-y-3">
-            {t('profile.achievements.publications.items', { returnObjects: true }).map((publication: any, index: number) => (
+            {t('profile.achievements.publications.items', { returnObjects: true }).map((publication, index: number) => (
               <li key={index} className="flex items-start">
                 <a
                   href={publication.url}

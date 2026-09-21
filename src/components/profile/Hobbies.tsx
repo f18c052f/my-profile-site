@@ -17,7 +17,7 @@ const Hobbies: React.FC = () => {
         <Heart className="mr-2" /> {t('profile.hobbies.title')}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {t('profile.hobbies.items', { returnObjects: true }).map((hobby: any, index: number) => (
+        {t('profile.hobbies.items', { returnObjects: true }).map((hobby, index: number) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.02 }}
@@ -41,7 +41,7 @@ const Hobbies: React.FC = () => {
                 </div>
                 {hobby.apps.length > 0 && (
                   <div className="mt-3">
-                    {hobby.apps.map((app: any, appIndex: number) => (
+                    {hobby.apps.map((app, appIndex: number) => (
                       <a
                         key={appIndex}
                         href={app.url}

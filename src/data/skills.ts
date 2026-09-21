@@ -1,4 +1,12 @@
-import { Code, Database, GitBranch } from "lucide-react";
+import type { ja } from "../i18n/locales/ja";
+
+export type SkillItem = { name: string; icon: string };
+
+/**
+ * カテゴリ名は i18n の profile.skills.categories のキーと一致していなければならない。
+ * 型で縛ることで、片方だけ変更したときにコンパイルエラーになる。
+ */
+export type SkillCategory = keyof typeof ja.profile.skills.categories;
 
 export const skills = {
   "Programming Languages": [
@@ -15,11 +23,6 @@ export const skills = {
     { name: "Linux", icon: "devicon-linux-plain colored" },
     { name: "ASP.NET Core", icon: "devicon-dotnetcore-plain colored" },
   ],
-  // "Frameworks/Libraries": [
-  //   { name: "React", icon: "devicon-react-original colored" },
-  //   { name: "Next.js", icon: "devicon-nextjs-original" },
-  //   { name: "Django", icon: "devicon-django-plain colored" },
-  // ],
   Tools: [
     { name: "Git", icon: "devicon-git-plain colored" },
     { name: "GoogleCloud", icon: "devicon-googlecloud-plain colored" },
@@ -33,4 +36,7 @@ export const skills = {
     { name: "AzureDevOps", icon: "devicon-azuredevops-plain colored" },
     { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   ],
-};
+} satisfies Partial<Record<SkillCategory, SkillItem[]>>;
+
+/** 型付きでカテゴリを反復するためのキー一覧 */
+export const skillCategories = Object.keys(skills) as (keyof typeof skills)[];

@@ -17,7 +17,7 @@ const Education: React.FC = () => {
         <BookOpen className="mr-2" /> {t('profile.education.title')}
       </h3>
       <div className="space-y-4">
-        {t('profile.education.items', { returnObjects: true }).map((item: any, index: number) => (
+        {t('profile.education.items', { returnObjects: true }).map((item, index: number) => (
           <div key={index} className="flex">
             <div className="w-24 flex-shrink-0 text-gray-600 dark:text-gray-400">
               {item.year}

@@ -45,7 +45,7 @@ const Career: React.FC<CareerProps> = ({
       {!isAuthenticated ? (
         <div className="space-y-6">
           {t("profile.career.items", { returnObjects: true }).map(
-            (item: any, index: number) => (
+            (item, index: number) => (
               <div
                 key={index}
                 className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm"
@@ -72,7 +72,7 @@ const Career: React.FC<CareerProps> = ({
       ) : (
         <div className="space-y-6">
           {t("profile.career.items", { returnObjects: true }).map(
-            (item: any, index: number) => (
+            (item, index: number) => (
               <div
                 key={index}
                 className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm"

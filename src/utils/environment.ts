@@ -1,4 +1,4 @@
-import { connectAuthEmulator, type Auth } from 'firebase/auth';
+import { connectAuthEmulator } from 'firebase/auth';
 import { getAnalytics, setAnalyticsCollectionEnabled } from 'firebase/analytics';
 import { app, auth } from './firebase';
 

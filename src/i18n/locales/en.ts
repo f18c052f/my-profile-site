@@ -1,3 +1,6 @@
+import type { ja } from "./ja";
+import type { HobbyApp } from "../types";
+
 import hikari from "../../assets/images/IMGP0803.jpeg";
 import sunset from "../../assets/images/IMGP3645_ret.jpg";
 import yurameki from "../../assets/images/IMGP5227_ret.jpg";
@@ -87,36 +90,31 @@ export const en = {
           emoji: "📷",
           title: "Photography/Videography",
           description: ["Landscapes", "Portraits", "Cinematic Videos"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "⚒️",
           title: "Making Things",
           description: ["App Development", "Electronics", "Woodworking"],
-          apps: [
-            // {
-            //   name: "Photo Gallery App",
-            //   url: "https://example.com/photo-gallery",
-            // },
-          ],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🍵",
           title: "Tea Ceremony",
           description: ["Urasenke"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🏕️",
           title: "Camping",
           description: ["Group Camping"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🖼️",
           title: "Art Appreciation",
           description: ["Netherlands", "Rembrandt", "Impressionism"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
       ],
     },
@@ -205,4 +203,4 @@ export const en = {
       },
     ],
   },
-};
+} satisfies typeof ja;

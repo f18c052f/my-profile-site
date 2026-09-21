@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Code, Award } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { skills } from "../../data/skills";
+import { skillCategories, skills } from "../../data/skills";
 
 const Skills: React.FC = () => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ const Skills: React.FC = () => {
         <Code className="mr-2" /> {t("profile.skills.title")}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Object.entries(skills).map(([category, items]) => (
+        {skillCategories.map((category) => (
           <div
             key={category}
             className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-sm"
@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
               {t(`profile.skills.categories.${category}`)}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {items.map((item, index) => (
+              {skills[category].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <i className={`${item.icon} text-2xl`}></i>
                   <span className="text-gray-600 dark:text-gray-300 break-words">

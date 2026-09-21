@@ -1,3 +1,5 @@
+import type { HobbyApp } from "../types";
+
 import hikari from "../../assets/images/IMGP0803.jpeg";
 import sunset from "../../assets/images/IMGP3645_ret.jpg";
 import yurameki from "../../assets/images/IMGP5227_ret.jpg";
@@ -85,36 +87,31 @@ export const ja = {
           emoji: "📷",
           title: "写真・動画 撮影",
           description: ["風景", "ポートレート", "シネマティック動画"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "⚒️",
           title: "ものづくり",
           description: ["アプリ開発", "電子工作", "木工工作"],
-          apps: [
-            // {
-            //   name: "フォトギャラリーアプリ",
-            //   url: "https://example.com/photo-gallery",
-            // },
-          ],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🍵",
           title: "茶道",
           description: ["裏千家"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🏕️",
           title: "キャンプ",
           description: ["グルキャン"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
         {
           emoji: "🖼️",
           title: "美術鑑賞",
           description: ["オランダ", "レンブラント", "印象派"],
-          apps: [],
+          apps: [] as HobbyApp[],
         },
       ],
     },
