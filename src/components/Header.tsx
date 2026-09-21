@@ -14,7 +14,8 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ja' ? 'en' : 'ja';
-    i18n.changeLanguage(newLang);
+    // 言語の切り替え結果は待たない（完了時に react-i18next が再描画する）
+    void i18n.changeLanguage(newLang);
   };
 
   const toggleMobileMenu = () => {
