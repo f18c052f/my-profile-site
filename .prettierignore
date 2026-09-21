@@ -3,3 +3,4 @@ pnpm-lock.yaml
 test-results
 playwright-report
 src/assets/images/generated
+src/assets/icons

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Award } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { skillIcons } from '../../assets/icons';
 import { skillCategories, skills } from '../../data/skills';
 
 const Skills: React.FC = () => {
@@ -26,7 +27,7 @@ const Skills: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {skills[category].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <i className={`${item.icon} text-2xl`}></i>
+                  <img src={skillIcons[item.icon]} alt="" aria-hidden="true" className="w-6 h-6" />
                   <span className="text-gray-600 dark:text-gray-300 break-words">{item.name}</span>
                 </div>
               ))}

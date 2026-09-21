@@ -8,7 +8,7 @@ import prettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist', 'test-results', 'playwright-report', 'src/assets/images/generated'] },
+  { ignores: ['dist', 'test-results', 'playwright-report', 'src/assets/images/generated', 'src/assets/icons'] },
 
   // アプリと Node 側スクリプトの TypeScript。型情報つきで検査する
   {

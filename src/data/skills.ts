@@ -1,6 +1,7 @@
+import type { SkillIconName } from '../assets/icons';
 import type { ja } from '../i18n/locales/ja';
 
-export type SkillItem = { name: string; icon: string };
+export type SkillItem = { name: string; icon: SkillIconName };
 
 /**
  * カテゴリ名は i18n の profile.skills.categories のキーと一致していなければならない。
@@ -10,31 +11,31 @@ export type SkillCategory = keyof typeof ja.profile.skills.categories;
 
 export const skills = {
   'Programming Languages': [
-    { name: 'Python', icon: 'devicon-python-plain colored' },
-    { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
-    { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
-    { name: 'C#', icon: 'devicon-csharp-plain colored' },
-    { name: 'C', icon: 'devicon-carbon-original colored' },
-    { name: 'MATLAB', icon: 'devicon-matlab-plain colored' },
-    { name: 'HTML', icon: 'devicon-html5-plain colored' },
-    { name: 'CSS', icon: 'devicon-css3-plain colored' },
-    { name: 'React/ReactNative', icon: 'devicon-react-original colored' },
-    { name: 'Unity', icon: 'devicon-unity-plain colored' },
-    { name: 'Linux', icon: 'devicon-linux-plain colored' },
-    { name: 'ASP.NET Core', icon: 'devicon-dotnetcore-plain colored' },
+    { name: 'Python', icon: 'python-plain' },
+    { name: 'TypeScript', icon: 'typescript-plain' },
+    { name: 'JavaScript', icon: 'javascript-plain' },
+    { name: 'C#', icon: 'csharp-plain' },
+    { name: 'C', icon: 'carbon-original' },
+    { name: 'MATLAB', icon: 'matlab-plain' },
+    { name: 'HTML', icon: 'html5-plain' },
+    { name: 'CSS', icon: 'css3-plain' },
+    { name: 'React/ReactNative', icon: 'react-original' },
+    { name: 'Unity', icon: 'unity-plain' },
+    { name: 'Linux', icon: 'linux-plain' },
+    { name: 'ASP.NET Core', icon: 'dotnetcore-plain' },
   ],
   Tools: [
-    { name: 'Git', icon: 'devicon-git-plain colored' },
-    { name: 'GoogleCloud', icon: 'devicon-googlecloud-plain colored' },
-    { name: 'WordPress', icon: 'devicon-wordpress-plain colored' },
-    { name: 'AndroidStudio', icon: 'devicon-androidstudio-plain colored' },
-    { name: 'Xcode', icon: 'devicon-xcode-plain colored' },
-    { name: 'RaspberryPi', icon: 'devicon-raspberrypi-plain colored' },
-    { name: 'Arduino', icon: 'devicon-arduino-plain colored' },
-    { name: 'Streamlit', icon: 'devicon-streamlit-plain colored' },
-    { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark colored' },
-    { name: 'AzureDevOps', icon: 'devicon-azuredevops-plain colored' },
-    { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+    { name: 'Git', icon: 'git-plain' },
+    { name: 'GoogleCloud', icon: 'googlecloud-plain' },
+    { name: 'WordPress', icon: 'wordpress-plain' },
+    { name: 'AndroidStudio', icon: 'androidstudio-plain' },
+    { name: 'Xcode', icon: 'xcode-plain' },
+    { name: 'RaspberryPi', icon: 'raspberrypi-plain' },
+    { name: 'Arduino', icon: 'arduino-plain' },
+    { name: 'Streamlit', icon: 'streamlit-plain' },
+    { name: 'AWS', icon: 'amazonwebservices-plain-wordmark' },
+    { name: 'AzureDevOps', icon: 'azuredevops-plain' },
+    { name: 'PostgreSQL', icon: 'postgresql-plain' },
   ],
 } satisfies Partial<Record<SkillCategory, SkillItem[]>>;
 
