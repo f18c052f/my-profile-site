@@ -1,92 +1,92 @@
-import type { ja } from "./ja";
-import type { CareerSection, HobbyApp } from "../types";
+import type { ja } from './ja';
+import type { CareerSection, HobbyApp } from '../types';
 
-import hikari from "../../assets/images/IMGP0803.jpeg";
-import sunset from "../../assets/images/IMGP3645_ret.jpg";
-import yurameki from "../../assets/images/IMGP5227_ret.jpg";
-import ajisai from "../../assets/images/IMGP9249.jpeg";
-import sakura from "../../assets/images/DSC02515.jpg";
-import amsterdam from "../../assets/images/amsterdam.jpg";
-import ramune from "../../assets/images/DSC00678.jpeg";
-import redsun from "../../assets/images/DSC00875_ex.jpeg";
-import kiritori from "../../assets/images/IMGP8660.jpeg";
+import hikari from '../../assets/images/IMGP0803.jpeg';
+import sunset from '../../assets/images/IMGP3645_ret.jpg';
+import yurameki from '../../assets/images/IMGP5227_ret.jpg';
+import ajisai from '../../assets/images/IMGP9249.jpeg';
+import sakura from '../../assets/images/DSC02515.jpg';
+import amsterdam from '../../assets/images/amsterdam.jpg';
+import ramune from '../../assets/images/DSC00678.jpeg';
+import redsun from '../../assets/images/DSC00875_ex.jpeg';
+import kiritori from '../../assets/images/IMGP8660.jpeg';
 
 export const en = {
   header: {
-    profile: "Profile",
-    gallery: "Gallery",
+    profile: 'Profile',
+    gallery: 'Gallery',
   },
   hero: {
     title: "Y.Ohara's Profile",
     introduction:
-      "Born in 1995, I am a father of one child, originally from Toyama Prefecture and currently residing in Niigata Prefecture. During my student days, I mainly studied hardware such as electronic circuits and optical interferometers, but I have ended up working as a software engineer.",
+      'Born in 1995, I am a father of one child, originally from Toyama Prefecture and currently residing in Niigata Prefecture. During my student days, I mainly studied hardware such as electronic circuits and optical interferometers, but I have ended up working as a software engineer.',
   },
   profile: {
-    title: "Profile",
+    title: 'Profile',
     education: {
-      title: "Education",
+      title: 'Education',
       items: [
         {
-          year: "2020",
+          year: '2020',
           description:
-            "Completed the Graduated School of Science and Technology, a national university",
+            'Completed the Graduated School of Science and Technology, a national university',
         },
         {
-          year: "2018",
+          year: '2018',
           description:
-            "Graduated from the Department of Electrical and Electronic Engineering, Faculty of Engineering, a national university",
+            'Graduated from the Department of Electrical and Electronic Engineering, Faculty of Engineering, a national university',
         },
       ],
     },
     career: {
-      title: "Career",
+      title: 'Career',
       items: [
         {
-          year: "2023 - Present",
-          company: "SIer",
-          position: "Engineer",
-          summary: "Belonging to the New Business Creation Department",
+          year: '2023 - Present',
+          company: 'SIer',
+          position: 'Engineer',
+          summary: 'Belonging to the New Business Creation Department',
           details: {
             intro: [
-              "Joined a systems integrator",
-              "Engaged in a wide range of projects, mainly web and smartphone applications, including new planning, R&D, development, maintenance, and operation of in-house services, as well as basic design support and development for contracted projects.",
-              "Experienced in both Scrum and Waterfall development.",
+              'Joined a systems integrator',
+              'Engaged in a wide range of projects, mainly web and smartphone applications, including new planning, R&D, development, maintenance, and operation of in-house services, as well as basic design support and development for contracted projects.',
+              'Experienced in both Scrum and Waterfall development.',
             ],
             sections: [
               {
-                heading: "2023",
+                heading: '2023',
                 points: [
-                  "Contract project: Development support in a supercomputer environment (document creation, batch program creation, testing, various investigations) (Linux/Python)",
-                  "New business planning based on in-house services: PoC creation of a smartphone application considering accessibility (ReactNative/TypeScript/Firebase/Looker)",
+                  'Contract project: Development support in a supercomputer environment (document creation, batch program creation, testing, various investigations) (Linux/Python)',
+                  'New business planning based on in-house services: PoC creation of a smartphone application considering accessibility (ReactNative/TypeScript/Firebase/Looker)',
                 ],
               },
               {
-                heading: "2024",
+                heading: '2024',
                 points: [
-                  "New business planning based on in-house services (continued): Collaboration with other companies, demonstrations and user interviews with end users (presentation in English in the Philippines)",
-                  "Maintenance and operation of in-house services: Compliance with Google Play/Apple Store terms",
+                  'New business planning based on in-house services (continued): Collaboration with other companies, demonstrations and user interviews with end users (presentation in English in the Philippines)',
+                  'Maintenance and operation of in-house services: Compliance with Google Play/Apple Store terms',
                 ],
               },
               {
-                heading: "2025",
+                heading: '2025',
                 points: [
-                  "Contract project: Basic design support (business flow organization, demonstration using mocks)",
-                  "Internal small-scale study group: IoT application development (AWS IoT Core/Streamlit/ESP32)",
+                  'Contract project: Basic design support (business flow organization, demonstration using mocks)',
+                  'Internal small-scale study group: IoT application development (AWS IoT Core/Streamlit/ESP32)',
                 ],
               },
             ] as CareerSection[],
           },
         },
         {
-          year: "2020 - 2023",
-          company: "Automotive Equipment Manufacturer",
-          position: "Engineer",
-          summary: "Belonging to the R&D Division",
+          year: '2020 - 2023',
+          company: 'Automotive Equipment Manufacturer',
+          position: 'Engineer',
+          summary: 'Belonging to the R&D Division',
           details: {
             intro: [
-              "Joined an automotive equipment manufacturer",
-              "Mainly in charge of elemental technology development for next-generation in-vehicle products, engaged in PoC (Proof of Concept) development, sensory evaluation using the results, data analysis, and patent application.",
-              "In the software field, performed tasks such as building an in-vehicle AR system and evaluating the load of embedded systems.",
+              'Joined an automotive equipment manufacturer',
+              'Mainly in charge of elemental technology development for next-generation in-vehicle products, engaged in PoC (Proof of Concept) development, sensory evaluation using the results, data analysis, and patent application.',
+              'In the software field, performed tasks such as building an in-vehicle AR system and evaluating the load of embedded systems.',
             ],
             sections: [] as CareerSection[],
           },
@@ -94,137 +94,134 @@ export const en = {
       ],
     },
     skills: {
-      title: "Skills",
+      title: 'Skills',
       categories: {
-        "Programming Languages": "Programming Languages/Frameworks/Libraries",
+        'Programming Languages': 'Programming Languages/Frameworks/Libraries',
         // "Frameworks/Libraries": "Frameworks/Libraries",
-        Tools: "Tools",
-        Qualifications: "Qualifications",
+        Tools: 'Tools',
+        Qualifications: 'Qualifications',
       },
       qualifications: [
-        "TOEIC 845 (2022)",
-        "Google Cloud Associate Cloud Engineer (2023)",
-        "G Certification (2023)",
-        "Google Cloud Professional Cloud Architect (2023)",
-        "Google Cloud Professional Machine Learning Engineer (2023)",
+        'TOEIC 845 (2022)',
+        'Google Cloud Associate Cloud Engineer (2023)',
+        'G Certification (2023)',
+        'Google Cloud Professional Cloud Architect (2023)',
+        'Google Cloud Professional Machine Learning Engineer (2023)',
       ],
     },
     hobbies: {
-      title: "Hobbies",
+      title: 'Hobbies',
       items: [
         {
-          emoji: "📷",
-          title: "Photography/Videography",
-          description: ["Landscapes", "Portraits", "Cinematic Videos"],
+          emoji: '📷',
+          title: 'Photography/Videography',
+          description: ['Landscapes', 'Portraits', 'Cinematic Videos'],
           apps: [] as HobbyApp[],
         },
         {
-          emoji: "⚒️",
-          title: "Making Things",
-          description: ["App Development", "Electronics", "Woodworking"],
+          emoji: '⚒️',
+          title: 'Making Things',
+          description: ['App Development', 'Electronics', 'Woodworking'],
           apps: [] as HobbyApp[],
         },
         {
-          emoji: "🍵",
-          title: "Tea Ceremony",
-          description: ["Urasenke"],
+          emoji: '🍵',
+          title: 'Tea Ceremony',
+          description: ['Urasenke'],
           apps: [] as HobbyApp[],
         },
         {
-          emoji: "🏕️",
-          title: "Camping",
-          description: ["Group Camping"],
+          emoji: '🏕️',
+          title: 'Camping',
+          description: ['Group Camping'],
           apps: [] as HobbyApp[],
         },
         {
-          emoji: "🖼️",
-          title: "Art Appreciation",
-          description: ["Netherlands", "Rembrandt", "Impressionism"],
+          emoji: '🖼️',
+          title: 'Art Appreciation',
+          description: ['Netherlands', 'Rembrandt', 'Impressionism'],
           apps: [] as HobbyApp[],
         },
       ],
     },
     achievements: {
-      title: "Achievements",
+      title: 'Achievements',
       patents: {
-        title: "Patents",
+        title: 'Patents',
         items: [
           {
-            title:
-              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
-            number: "Publication number2023-046339",
-            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2023-046339/11/ja",
+            title: 'DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD',
+            number: 'Publication number2023-046339',
+            url: 'https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2023-046339/11/ja',
           },
           {
-            title:
-              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
-            number: "Publication number2024-017509",
-            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017509/11/ja",
+            title: 'DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD',
+            number: 'Publication number2024-017509',
+            url: 'https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017509/11/ja',
           },
           {
-            title:
-              "DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD",
-            number: "Publication number2024-017515",
-            url: "https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017515/11/ja",
+            title: 'DISPLAY CONTROL DEVICE, HEAD-UP DISPLAY DEVICE AND DISPLAY CONTROL METHOD',
+            number: 'Publication number2024-017515',
+            url: 'https://www.j-platpat.inpit.go.jp/c1801/PU/JP-2024-017515/11/ja',
           },
         ],
       },
       publications: {
-        title: "Publications",
+        title: 'Publications',
         items: [
           {
             title:
               'Refereed Paper "Vibration distribution measurement using down sampling phase shifting interferometer" (2020)',
-            journal: "Optical Engineering, First author",
-            url: "https://www.spiedigitallibrary.org/journals/optical-engineering/volume-59/issue-3/034112/Vibration-distribution-measurement-using-downsampling-phase-shifting-interferometer/10.1117/1.OE.59.3.034112.short?SSO=1",
+            journal: 'Optical Engineering, First author',
+            url: 'https://www.spiedigitallibrary.org/journals/optical-engineering/volume-59/issue-3/034112/Vibration-distribution-measurement-using-downsampling-phase-shifting-interferometer/10.1117/1.OE.59.3.034112.short?SSO=1',
           },
         ],
       },
       awards: {
-        title: "Presentations",
+        title: 'Presentations',
         items: [
-          "ISMTII (International Symposium on Measurement Technology and Intelligent Instruments) - Oral presentation at an international conference (2019)",
+          'ISMTII (International Symposium on Measurement Technology and Intelligent Instruments) - Oral presentation at an international conference (2019)',
         ],
       },
     },
   },
   gallery: {
-    title: "Gallery",
+    title: 'Gallery',
     items: [
       {
-        title: "Autumn Light",
+        title: 'Autumn Light',
         url: hikari,
       },
       {
-        title: "Past",
+        title: 'Past',
         url: sunset,
       },
       {
-        title: "Flicker",
+        title: 'Flicker',
         url: yurameki,
       },
       {
-        title: "Hydrangea",
+        title: 'Hydrangea',
         url: ajisai,
       },
       {
-        title: "Cherry Tree",
+        title: 'Cherry Tree',
         url: sakura,
       },
       {
-        title: "Travel",
+        title: 'Travel',
         url: amsterdam,
       },
       {
-        title: "Transparency",
+        title: 'Transparency',
         url: ramune,
       },
       {
-        title: "Evening Dew",
+        title: 'Evening Dew',
         url: redsun,
       },
       {
-        title: "Cropping",
+        title: 'Cropping',
         url: kiritori,
       },
     ],

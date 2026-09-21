@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Profile from "./components/Profile";
-import Gallery from "./components/Gallery";
-import { initAnalytics } from "./utils/analytics";
+import { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Profile from './components/Profile';
+import Gallery from './components/Gallery';
+import { initAnalytics } from './utils/analytics';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
 

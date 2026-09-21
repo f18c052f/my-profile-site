@@ -7,7 +7,7 @@ const Hobbies: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -26,9 +26,7 @@ const Hobbies: React.FC = () => {
             <div className="flex items-start space-x-4">
               <span className="text-4xl">{hobby.emoji}</span>
               <div className="flex-grow">
-                <h4 className="font-medium text-gray-900 dark:text-white mb-2">
-                  {hobby.title}
-                </h4>
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2">{hobby.title}</h4>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {hobby.description.map((desc: string, i: number) => (
                     <span

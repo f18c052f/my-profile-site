@@ -23,15 +23,15 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
 
   const NavLinks = () => (
     <>
-      <a 
-        href="#profile" 
+      <a
+        href="#profile"
         className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
         onClick={() => setIsMobileMenuOpen(false)}
       >
         {t('header.profile')}
       </a>
-      <a 
-        href="#gallery" 
+      <a
+        href="#gallery"
         className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
         onClick={() => setIsMobileMenuOpen(false)}
       >
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
           <div className="flex-shrink-0">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white">{t('hero.title')}</h1>
           </div>
-          
+
           <nav className="hidden md:flex space-x-8">
             <NavLinks />
           </nav>
@@ -59,27 +59,19 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
             >
               <Languages className="h-5 w-5" />
             </button>
-            
+
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             >
-              {isDarkMode ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
 
             <button
               onClick={toggleMobileMenu}
               className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
@@ -94,4 +86,4 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
   );
 };
 
-export default Header
+export default Header;

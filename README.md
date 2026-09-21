@@ -22,25 +22,25 @@ pnpm dev
 
 ## スクリプト
 
-| コマンド | 内容 |
-| --- | --- |
-| `pnpm dev` | 開発サーバーを起動 |
-| `pnpm build` | 型チェック（`typecheck`）を通してから本番ビルド |
-| `pnpm typecheck` | `tsc --noEmit` をアプリ側・Node 側の両方に実行 |
-| `pnpm lint` | ESLint |
-| `pnpm preview` | ビルド成果物をローカル配信 |
-| `pnpm test` | Playwright（デスクトップ / モバイルの 2 プロジェクト） |
+| コマンド         | 内容                                                   |
+| ---------------- | ------------------------------------------------------ |
+| `pnpm dev`       | 開発サーバーを起動                                     |
+| `pnpm build`     | 型チェック（`typecheck`）を通してから本番ビルド        |
+| `pnpm typecheck` | `tsc --noEmit` をアプリ側・Node 側の両方に実行         |
+| `pnpm lint`      | ESLint                                                 |
+| `pnpm preview`   | ビルド成果物をローカル配信                             |
+| `pnpm test`      | Playwright（デスクトップ / モバイルの 2 プロジェクト） |
 
 ## コンテンツの更新
 
 表示テキストのほとんどは i18n のロケールファイルにあります。**日本語と英語は必ず対で編集してください**（`en.ts` には `satisfies typeof ja` を付けているため、キー構造がずれると型エラーになります）。
 
-| 対象 | ファイル |
-| --- | --- |
+| 対象                                                             | ファイル                                            |
+| ---------------------------------------------------------------- | --------------------------------------------------- |
 | 自己紹介・学歴・職務経歴・資格・趣味・実績・ギャラリーのタイトル | `src/i18n/locales/ja.ts` / `src/i18n/locales/en.ts` |
-| スキル項目と devicon のアイコンクラス | `src/data/skills.ts` |
-| 画像 | `src/assets/images/` |
-| 公開 URL・GitHub URL・GA4 測定 ID | `src/config/site.ts` |
+| スキル項目と devicon のアイコンクラス                            | `src/data/skills.ts`                                |
+| 画像                                                             | `src/assets/images/`                                |
+| 公開 URL・GitHub URL・GA4 測定 ID                                | `src/config/site.ts`                                |
 
 ## アクセス解析
 

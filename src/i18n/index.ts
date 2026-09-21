@@ -10,16 +10,16 @@ i18n
   .init({
     resources: {
       en: {
-        translation: en
+        translation: en,
       },
       ja: {
-        translation: ja
-      }
+        translation: ja,
+      },
     },
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
 export default i18n;

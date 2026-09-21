@@ -15,7 +15,7 @@ const Gallery: React.FC = () => {
       className="min-h-screen pt-20 pb-16 px-4 bg-white dark:bg-gray-900"
     >
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -52,4 +52,4 @@ const Gallery: React.FC = () => {
   );
 };
 
-export default Gallery
+export default Gallery;

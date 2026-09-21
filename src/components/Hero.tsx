@@ -1,9 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Github, Mail } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import desk from "../assets/images/DSC07060.jpg";
-import yo from "../assets/images/IMGP1057.jpeg";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Github, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import desk from '../assets/images/DSC07060.jpg';
+import yo from '../assets/images/IMGP1057.jpeg';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -33,11 +33,9 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          {t("hero.title")}
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('hero.title')}</h1>
         <p className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed">
-          {t("hero.introduction")}
+          {t('hero.introduction')}
         </p>
 
         <div className="flex justify-center space-x-6">
