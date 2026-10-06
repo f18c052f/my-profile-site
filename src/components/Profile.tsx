@@ -5,6 +5,7 @@ import Education from './profile/Education';
 import Career from './profile/Career';
 import Skills from './profile/Skills';
 import Hobbies from './profile/Hobbies';
+import Projects from './profile/Projects';
 import Achievements from './profile/Achievements';
 
 const Profile: React.FC = () => {
@@ -21,6 +22,7 @@ const Profile: React.FC = () => {
         <Career />
         <Skills />
         <Hobbies />
+        <Projects />
         <Achievements />
       </Container>
     </section>

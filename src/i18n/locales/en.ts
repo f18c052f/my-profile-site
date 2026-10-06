@@ -128,6 +128,26 @@ export const en = {
         },
       ],
     },
+    projects: {
+      title: 'Projects',
+      links: {
+        github: 'GitHub',
+        youtube: 'YouTube',
+      },
+      items: {
+        hikikomori: {
+          title: 'Self-Automated Hikikomori',
+          description: 'A robot that switches itself back OFF as soon as you turn it ON.',
+          alt: 'A finger flips the switch on a small box with a face; the lid opens and the switch gets flipped back off from inside',
+        },
+        smartled: {
+          title: 'SmartLED',
+          description:
+            'Voice-controlled DIY bookshelf lighting that turns vague requests like "make it look cyberpunk" into fitting colors and effects.',
+          alt: 'After the request "make the lights cyberpunk", the bookshelf LEDs shift from blue to purple and pink',
+        },
+      },
+    },
     achievements: {
       title: 'Achievements',
       patents: {
