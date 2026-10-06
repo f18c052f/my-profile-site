@@ -45,6 +45,10 @@ import yurameki_640_webp from './yurameki-640.webp';
 import yurameki_1280_webp from './yurameki-1280.webp';
 import yurameki_1920_webp from './yurameki-1920.webp';
 import yurameki_1280_jpg from './yurameki-1280.jpg';
+import hikikomori_anim_webp from './hikikomori.webp';
+import hikikomori_poster_webp from './hikikomori-poster.webp';
+import smartled_anim_webp from './smartled.webp';
+import smartled_poster_webp from './smartled-poster.webp';
 
 export type GeneratedImage = {
   /** srcSet が使えない場合に表示する JPEG */
@@ -136,3 +140,27 @@ export const images = {
     blurDataURL: 'data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JZwAAUoWH0f8q0rO/zygA/gStY5v9TCS2HTPXZ+on5iNblrKghvY9SWCTJ6E/Jf+UWbqRqfe0K6ayL6YQ1NDmMUNrzFscv4BC358tzA9kY4AA',
   },
 } satisfies Record<string, GeneratedImage>;
+
+export type GeneratedAnimation = {
+  /** アニメーション WebP */
+  src: string;
+  /** 1 コマ目の静止画。「動きを減らす」設定時に表示する */
+  poster: string;
+  width: number;
+  height: number;
+};
+
+export const animations = {
+  hikikomori: {
+    src: hikikomori_anim_webp,
+    poster: hikikomori_poster_webp,
+    width: 480,
+    height: 270,
+  },
+  smartled: {
+    src: smartled_anim_webp,
+    poster: smartled_poster_webp,
+    width: 270,
+    height: 480,
+  },
+} satisfies Record<string, GeneratedAnimation>;

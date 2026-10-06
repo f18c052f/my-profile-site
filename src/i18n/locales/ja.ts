@@ -124,6 +124,26 @@ export const ja = {
         },
       ],
     },
+    projects: {
+      title: '個人開発',
+      links: {
+        github: 'GitHub',
+        youtube: 'YouTube',
+      },
+      items: {
+        hikikomori: {
+          title: '自動ひきこもり機',
+          description: 'スイッチを ON にすると、自分で OFF に戻してしまうロボット。',
+          alt: '顔の描かれた小箱のスイッチを指で入れると、ふたが開いて中からスイッチを戻される様子',
+        },
+        smartled: {
+          title: 'SmartLED',
+          description:
+            '「サイバーパンク風に光らせて」のような曖昧な言葉でも、本棚の LED がそれらしく光る、声で操れる DIY 照明。',
+          alt: '「ライトをサイバーパンク風にして」と指示すると、本棚の LED が青から紫やピンクの光に変わる様子',
+        },
+      },
+    },
     achievements: {
       title: '実績',
       patents: {
