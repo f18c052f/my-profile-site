@@ -17,14 +17,17 @@ export const projects = [
     technologies: ['ESP32', 'C++', 'Servo'],
     links: [
       { kind: 'github', url: 'https://github.com/f18c052f/self-automated_hikikomori' },
-      { kind: 'youtube', url: 'https://youtu.be/gk-dLM3qwz0' },
+      { kind: 'youtube', url: 'https://youtu.be/9Ornaa_iXtA' },
     ],
   },
   {
     id: 'smartled',
     animation: animations.smartled,
     technologies: ['ESP32', 'WLED', 'Alexa', 'Gemini API', 'AWS', 'TypeScript'],
-    links: [{ kind: 'github', url: 'https://github.com/f18c052f/SmartLED' }],
+    links: [
+      { kind: 'github', url: 'https://github.com/f18c052f/SmartLED' },
+      { kind: 'youtube', url: 'https://youtu.be/91B_c6ebyrg' },
+    ],
   },
 ] satisfies {
   id: ProjectId;
